@@ -1,11 +1,11 @@
 <p>
   <strong>Title:</strong>
-  <%= @article.title %>
+  <%= @phone.title %>
 </p>
 
 <p>
   <strong>Text:</strong>
-  <%= @article.text %>
+  <%= @phone.text %>
 </p>
 
 <p>
@@ -238,4 +238,5 @@
   <%= @phone.protection %>
 </p>
 
+<%= link_to 'Edit', edit_phone_path(@phone) %>
 <%= link_to 'Back', phones_path %>
