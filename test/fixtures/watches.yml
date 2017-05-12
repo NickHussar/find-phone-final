@@ -1,0 +1,121 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  developer: 
+  model: 
+  description: MyText
+  m_year: 2017-02-27
+  resolution_x: 1
+  resolution_y: 1
+  diagonal: 
+  screen_type: 
+  color_screen: false
+  dpi: 1
+  touchscreen: false
+  multitouch: 1
+  cpu: 
+  cores: 1
+  frequency: 
+  gpu: 
+  inner_mem: 1
+  ram: 1
+  cam: false
+  megapixels: 
+  photo_res_x: 1
+  photo_res_y: 1
+  autofocus: false
+  video-rec: false
+  video_res_x: 1
+  video_res_y: 1
+  fps: 1
+  finder: false
+  phone: false
+  e-mail: false
+  wifi: 
+  bluetooth: 
+  nfc: false
+  gps: false
+  gyroscope: false
+  accelerometer: false
+  barometer: false
+  thermometer: false
+  compass: false
+  chronograph: false
+  pedometer: false
+  pulse_sensor: false
+  fitness_tracker: false
+  wireless_charge: false
+  fast_charge: false
+  battery: 1
+  standby_time: 1
+  clock_time: 1
+  os: 
+  online_service: 
+  compatibility: 
+  speaker: false
+  mic: false
+  color: 
+  weight: 1
+  dimensions: 
+  material: 
+  protection: 
+
+two:
+  developer: 
+  model: 
+  description: MyText
+  m_year: 2017-02-27
+  resolution_x: 1
+  resolution_y: 1
+  diagonal: 
+  screen_type: 
+  color_screen: false
+  dpi: 1
+  touchscreen: false
+  multitouch: 1
+  cpu: 
+  cores: 1
+  frequency: 
+  gpu: 
+  inner_mem: 1
+  ram: 1
+  cam: false
+  megapixels: 
+  photo_res_x: 1
+  photo_res_y: 1
+  autofocus: false
+  video-rec: false
+  video_res_x: 1
+  video_res_y: 1
+  fps: 1
+  finder: false
+  phone: false
+  e-mail: false
+  wifi: 
+  bluetooth: 
+  nfc: false
+  gps: false
+  gyroscope: false
+  accelerometer: false
+  barometer: false
+  thermometer: false
+  compass: false
+  chronograph: false
+  pedometer: false
+  pulse_sensor: false
+  fitness_tracker: false
+  wireless_charge: false
+  fast_charge: false
+  battery: 1
+  standby_time: 1
+  clock_time: 1
+  os: 
+  online_service: 
+  compatibility: 
+  speaker: false
+  mic: false
+  color: 
+  weight: 1
+  dimensions: 
+  material: 
+  protection: 

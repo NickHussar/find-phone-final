@@ -1,0 +1,95 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  developer: 
+  model: 
+  description: MyText
+  m_year: 2017-02-27
+  resolution_x: 1
+  resolution_y: 1
+  diagonal: 
+  screen_type: 
+  dpi: 1
+  multitouch: 1
+  cpu: 
+  cores: 1
+  frequency: 
+  gpu: 
+  inner_mem: 1
+  ram: 1
+  cam: 
+  megapixels: 
+  photo_res_x: 1
+  photo_res_y: 1
+  hdr: false
+  front_megapixels: 
+  video_res_x: 1
+  video_res_y: 1
+  fps: 1
+  3g: 
+  4g: 
+  wifi: 
+  bluetooth: 
+  nfc: false
+  gyroscope: false
+  accelerometer: false
+  barometer: false
+  wireless_charge: false
+  fast_charge: false
+  vr: false
+  battery: 1
+  standby_time: 1
+  talk_time: 1
+  os: 
+  color: 
+  weight: 1
+  dimensions: 
+  material: 
+  protection: 
+
+two:
+  developer: 
+  model: 
+  description: MyText
+  m_year: 2017-02-27
+  resolution_x: 1
+  resolution_y: 1
+  diagonal: 
+  screen_type: 
+  dpi: 1
+  multitouch: 1
+  cpu: 
+  cores: 1
+  frequency: 
+  gpu: 
+  inner_mem: 1
+  ram: 1
+  cam: 
+  megapixels: 
+  photo_res_x: 1
+  photo_res_y: 1
+  hdr: false
+  front_megapixels: 
+  video_res_x: 1
+  video_res_y: 1
+  fps: 1
+  3g: 
+  4g: 
+  wifi: 
+  bluetooth: 
+  nfc: false
+  gyroscope: false
+  accelerometer: false
+  barometer: false
+  wireless_charge: false
+  fast_charge: false
+  vr: false
+  battery: 1
+  standby_time: 1
+  talk_time: 1
+  os: 
+  color: 
+  weight: 1
+  dimensions: 
+  material: 
+  protection: 
