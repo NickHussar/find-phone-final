@@ -1,0 +1,112 @@
+<h1>Hello, Rails!</h1>
+<table>
+  <tr>
+    <th>Title</th></th>
+    <th>Text</th></th>
+    <th>developer</th>
+    <th>model</th>
+    <th>description</th>
+    <th>m_year</th>
+    <th>resolution_x</th>
+    <th>resolution_y</th>
+    <th>diagonal</th>
+    <th>screen_type</th>
+    <th>dpi</th>
+    <th>multitouch</th>
+    <th>cpu</th>
+    <th>cores</th>
+    <th>frequency</th>
+    <th>gpu</th>
+    <th>inner_mem</th>
+    <th>ram</th>
+    <th>cam</th>
+    <th>megapixels</th>
+    <th>photo_res_x</th>
+    <th>photo_res_y</th>
+    <th>hdr</th>
+    <th>front_megapixels</th>
+    <th>video_res_x</th>
+    <th>video_res_y</th>
+    <th>fps</th>
+    <th>phone</th>
+    <th>three_g</th>
+    <th>four_g</th>
+    <th>wifi</th>
+    <th>bluetooth</th>
+    <th>nfc</th>
+    <th>gyroscope</th>
+    <th>accelerometer</th>
+    <th>barometer</th>
+    <th>wireless_charge</th>
+    <th>fast_charge</th>
+    <th>type_c</th>
+    <th>vr</th>
+    <th>battery</th>
+    <th>standby_time</th>
+    <th>talk_time</th>
+    <th>os</th>
+    <th>color</th>
+    <th>weight</th>
+    <th>dimensions</th>
+    <th>material</th>
+    <th>protection</th>
+  </tr>
+
+  <% @tablets.each do |tablet| %>
+    <tr>
+      <td><%= tablet.developer %></td>
+      <td><%= tablet.model %></td>
+      <td><%= tablet.description %></td>
+      <td><%= tablet.m_year %></td>
+      <td><%= tablet.resolution_x %></td>
+      <td><%= tablet.resolution_y %></td>
+      <td><%= tablet.diagonal %></td>
+      <td><%= tablet.screen_type %></td>
+      <td><%= tablet.dpi %></td>
+      <td><%= tablet.multitouch %></td>
+      <td><%= tablet.cpu %></td>
+      <td><%= tablet.cores %></td>
+      <td><%= tablet.frequency %></td>
+      <td><%= tablet.gpu %></td>
+      <td><%= tablet.inner_mem %></td>
+      <td><%= tablet.ram %></td>
+      <td><%= tablet.cam %></td>
+      <td><%= tablet.megapixels %></td>
+      <td><%= tablet.photo_res_x %></td>
+      <td><%= tablet.photo_res_y %></td>
+      <td><%= tablet.hdr %></td>
+      <td><%= tablet.front_megapixels %></td>
+      <td><%= tablet.video_res_x %></td>
+      <td><%= tablet.video_res_y %></td>
+      <td><%= tablet.fps %></td>
+      <td><%= tablet.phone %></td>
+      <td><%= tablet.three_g %></td>
+      <td><%= tablet.four_g %></td>
+      <td><%= tablet.wifi %></td>
+      <td><%= tablet.bluetooth %></td>
+      <td><%= tablet.nfc %></td>
+      <td><%= tablet.gyroscope %></td>
+      <td><%= tablet.accelerometer %></td>
+      <td><%= tablet.barometer %></td>
+      <td><%= tablet.wireless_charge %></td>
+      <td><%= tablet.fast_charge %></td>
+      <td><%= tablet.type_c %></td>
+      <td><%= tablet.battery %></td>
+      <td><%= tablet.standby_time %></td>
+      <td><%= tablet.talk_time %></td>
+      <td><%= tablet.os %></td>
+      <td><%= tablet.color %></td>
+      <td><%= tablet.weight %></td>
+      <td><%= tablet.dimensions %></td>
+      <td><%= tablet.material %></td>
+      <td><%= tablet.protection %></td>
+      <td><%= link_to 'Show', tablet_path(tablet) %></td>
+      <td><%= link_to 'Edit', edit_tablet_path(tablet) %></td>
+      <td><%= link_to 'Destroy', tablet_path(tablet),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Findphone', controller: 'tablets' %>
+<%= link_to 'New tablet', new_tablet_path %>

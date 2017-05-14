@@ -3,12 +3,29 @@
   <head>
     <title>FindPhone</title>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'default', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'default', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans|Roboto:400,700" rel="stylesheet">
   </head>
 
   <body>
+    <div class="sidebar">
+      <div class="logo">
+        <%= image_tag "logotype.svg" %>
+        <%= link_to 'FindPhone', controller: 'main'%>
+      </div>
+      <nav class="top-menu">
+        <%= link_to 'Телефоны', controller: 'phones' %>
+        <%= link_to 'Планшеты', controller: 'tablets' %>
+        <%= link_to 'Трансформеры', controller: 'transformers' %>
+        <%= link_to 'Умные часы', controller: 'watches' %>
+        <%= link_to 'Разработчики', controller: 'developers' %>
+      </nav>
+      <nav class="bottom-menu">
+        <a>Избранное</a>
+        <a>Сравнение</a>
+      </nav>
+    </div>
     <%= yield %>
   </body>
 </html>

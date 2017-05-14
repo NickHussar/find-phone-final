@@ -1,0 +1,17 @@
+<p>
+  <strong>Название:</strong>
+  <%= @developer.name %>
+</p>
+
+<p>
+  <strong>Описание:</strong>
+  <%= @developer.description %>
+</p>
+
+<p>
+  <strong>Устройства:</strong>
+  <%= @developer.devices %>
+</p>
+
+<%= link_to 'Edit', edit_developer_path(@developer) %>
+<%= link_to 'Back', developers_path %>

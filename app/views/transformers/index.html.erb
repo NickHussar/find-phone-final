@@ -1,0 +1,110 @@
+<h1>Hello, Rails!</h1>
+<table>
+  <tr>
+    <th>Title</th></th>
+    <th>Text</th></th>
+    <th>developer</th>
+    <th>model</th>
+    <th>description</th>
+    <th>m_year</th>
+    <th>resolution_x</th>
+    <th>resolution_y</th>
+    <th>diagonal</th>
+    <th>screen_type</th>
+    <th>dpi</th>
+    <th>multitouch</th>
+    <th>cpu</th>
+    <th>cores</th>
+    <th>frequency</th>
+    <th>gpu</th>
+    <th>inner_mem</th>
+    <th>ram</th>
+    <th>cam</th>
+    <th>megapixels</th>
+    <th>photo_res_x</th>
+    <th>photo_res_y</th>
+    <th>hdr</th>
+    <th>front_megapixels</th>
+    <th>video_res_x</th>
+    <th>video_res_y</th>
+    <th>fps</th>
+    <th>three_g</th>
+    <th>four_g</th>
+    <th>wifi</th>
+    <th>bluetooth</th>
+    <th>nfc</th>
+    <th>gyroscope</th>
+    <th>accelerometer</th>
+    <th>barometer</th>
+    <th>wireless_charge</th>
+    <th>fast_charge</th>
+    <th>type_c</th>
+    <th>vr</th>
+    <th>battery</th>
+    <th>standby_time</th>
+    <th>talk_time</th>
+    <th>os</th>
+    <th>color</th>
+    <th>weight</th>
+    <th>dimensions</th>
+    <th>material</th>
+    <th>protection</th>
+  </tr>
+
+  <% @transformers.each do |transformer| %>
+    <tr>
+      <td><%= transformer.developer %></td>
+      <td><%= transformer.model %></td>
+      <td><%= transformer.description %></td>
+      <td><%= transformer.m_year %></td>
+      <td><%= transformer.resolution_x %></td>
+      <td><%= transformer.resolution_y %></td>
+      <td><%= transformer.diagonal %></td>
+      <td><%= transformer.screen_type %></td>
+      <td><%= transformer.dpi %></td>
+      <td><%= transformer.multitouch %></td>
+      <td><%= transformer.cpu %></td>
+      <td><%= transformer.cores %></td>
+      <td><%= transformer.frequency %></td>
+      <td><%= transformer.gpu %></td>
+      <td><%= transformer.inner_mem %></td>
+      <td><%= transformer.ram %></td>
+      <td><%= transformer.cam %></td>
+      <td><%= transformer.megapixels %></td>
+      <td><%= transformer.photo_res_x %></td>
+      <td><%= transformer.photo_res_y %></td>
+      <td><%= transformer.hdr %></td>
+      <td><%= transformer.video_res_x %></td>
+      <td><%= transformer.video_res_y %></td>
+      <td><%= transformer.fps %></td>
+      <td><%= transformer.three_g %></td>
+      <td><%= transformer.four_g %></td>
+      <td><%= transformer.wifi %></td>
+      <td><%= transformer.bluetooth %></td>
+      <td><%= transformer.nfc %></td>
+      <td><%= transformer.gyroscope %></td>
+      <td><%= transformer.accelerometer %></td>
+      <td><%= transformer.barometer %></td>
+      <td><%= transformer.wireless_charge %></td>
+      <td><%= transformer.fast_charge %></td>
+      <td><%= transformer.stylus %></td>
+      <td><%= transformer.interfaces %></td>
+      <td><%= transformer.cards %></td>
+      <td><%= transformer.battery %></td>
+      <td><%= transformer.standby_time %></td>
+      <td><%= transformer.os %></td>
+      <td><%= transformer.color %></td>
+      <td><%= transformer.weight %></td>
+      <td><%= transformer.dimensions %></td>
+      <td><%= transformer.material %></td>
+      <td><%= transformer.protection %></td>
+      <td><%= link_to 'Show', transformer_path(transformer) %></td>
+      <td><%= link_to 'Edit', edit_transformer_path(transformer) %></td>
+      <td><%= link_to 'Destroy', transformer_path(transformer),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Findphone', controller: 'transformers' %>
+<%= link_to 'New transformer', new_transformer_path %>

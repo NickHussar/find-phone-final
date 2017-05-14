@@ -1,3 +1,93 @@
-// Place all the styles related to the Main controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  background-color: #009688;
+  min-height: 400px;
+}
+
+h1 {
+  color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 30pt;
+  margin: 30px 0;
+}
+
+h2 {
+  color: #FF9100;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15pt;
+}
+
+
+main {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  left: 200px;
+  width: calc(100% - 200px);
+  cursor: default;
+}
+
+main .reg {
+  position: absolute;
+  right: 0;
+  margin: 20px;
+}
+
+main .reg a {
+  color: #FAFAFA;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+main .welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+main .welcome div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 20px;
+  width: 65%;
+}
+
+main .welcome figure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #FAFAFA;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  width: 12vw;
+  height: 12vw;
+  cursor: pointer;
+  border-left: 10px solid #9E9E9E;
+  box-sizing: border-box;
+}
+
+main .line {
+  background-color: #FAFAFA;
+  padding: 20px 0 0 40px;
+  height: 300px;
+}
+
+main .line div {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+}
+
+main .line div article {
+  background-color: #FAFAFA;
+  width: 150px;
+  height: 250px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  margin-right:15px;
+}

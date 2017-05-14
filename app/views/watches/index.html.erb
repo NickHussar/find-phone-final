@@ -1,0 +1,134 @@
+<h1>Hello, Rails!</h1>
+<table>
+  <tr>
+    <th>developer</th>
+    <th>model</th>
+    <th>description</th>
+    <th>m_year</th>
+    <th>resolution_x</th>
+    <th>resolution_y</th>
+    <th>diagonal</th>
+    <th>screen_type</th>
+    <th>color_screen</th>
+    <th>dpi</th>
+    <th>touchscreen</th>
+    <th>multitouch</th>
+    <th>cpu</th>
+    <th>cores</th>
+    <th>frequency</th>
+    <th>gpu</th>
+    <th>inner_mem</th>
+    <th>ram</th>
+    <th>cam</th>
+    <th>megapixels</th>
+    <th>photo_res_x</th>
+    <th>photo_res_y</th>
+    <th>autofocus</th>
+    <th>video_rec</th>
+    <th>video_res_x</th>
+    <th>video_res_y</th>
+    <th>fps</th>
+    <th>finder</th>
+    <th>phone</th>
+    <th>e_mail</th>
+    <th>wifi</th>
+    <th>bluetooth</th>
+    <th>nfc</th>
+    <th>gps</th>
+    <th>gyroscope</th>
+    <th>accelerometer</th>
+    <th>barometer</th>
+    <th>thermometer</th>
+    <th>compass</th>
+    <th>chronograph</th>
+    <th>pedemeter</th>
+    <th>pulse_sensor</th>
+    <th>fitness_tracker</th>
+    <th>wireless_charge</th>
+    <th>fast_charge</th>
+    <th>type_c</th>
+    <th>battery</th>
+    <th>standby_time</th>
+    <th>clock_time</th>
+    <th>os</th>
+    <th>online_service</th>
+    <th>compatibility</th>
+    <th>speaker</th>
+    <th>mic</th>
+    <th>color</th>
+    <th>weight</th>
+    <th>dimensions</th>
+    <th>material</th>
+    <th>protection</th>
+  </tr>
+
+  <% @watches.each do |watch| %>
+    <tr>
+      <td><%= watch.developer %></td>
+      <td><%= watch.model %></td>
+      <td><%= watch.description %></td>
+      <td><%= watch.m_year %></td>
+      <td><%= watch.resolution_x %></td>
+      <td><%= watch.resolution_y %></td>
+      <td><%= watch.diagonal %></td>
+      <td><%= watch.screen_type %></td>
+      <td><%= watch.color_screen %></td>
+      <td><%= watch.dpi %></td>
+      <td><%= watch.multitouch %></td>
+      <td><%= watch.cpu %></td>
+      <td><%= watch.cores %></td>
+      <td><%= watch.frequency %></td>
+      <td><%= watch.gpu %></td>
+      <td><%= watch.inner_mem %></td>
+      <td><%= watch.ram %></td>
+      <td><%= watch.cam %></td>
+      <td><%= watch.megapixels %></td>
+      <td><%= watch.photo_res_x %></td>
+      <td><%= watch.photo_res_y %></td>
+      <td><%= watch.autofocus %></td>
+      <td><%= watch.video_rec %></td>
+      <td><%= watch.video_res_x %></td>
+      <td><%= watch.video_res_y %></td>
+      <td><%= watch.fps %></td>
+      <td><%= watch.finder %></td>
+      <td><%= watch.phone %></td>
+      <td><%= watch.e_mail %></td>
+      <td><%= watch.wifi %></td>
+      <td><%= watch.bluetooth %></td>
+      <td><%= watch.nfc %></td>
+      <td><%= watch.gps %></td>
+      <td><%= watch.gyroscope %></td>
+      <td><%= watch.accelerometer %></td>
+      <td><%= watch.barometer %></td>
+      <td><%= watch.thermometer %></td>
+      <td><%= watch.compass %></td>
+      <td><%= watch.chronograph %></td>
+      <td><%= watch.pedometer %></td>
+      <td><%= watch.pulse_sensor %></td>
+      <td><%= watch.fitness_tracker %></td>
+      <td><%= watch.wireless_charge %></td>
+      <td><%= watch.fast_charge %></td>
+      <td><%= watch.type_c %></td>
+      <td><%= watch.battery %></td>
+      <td><%= watch.standby_time %></td>
+      <td><%= watch.clock_time %></td>
+      <td><%= watch.os %></td>
+      <td><%= watch.online_service %></td>
+      <td><%= watch.compatibility %></td>
+      <td><%= watch.speaker %></td>
+      <td><%= watch.mic %></td>
+      <td><%= watch.color %></td>
+      <td><%= watch.weight %></td>
+      <td><%= watch.dimensions %></td>
+      <td><%= watch.material %></td>
+      <td><%= watch.protection %></td>
+      <td><%= link_to 'Show', watch_path(watch) %></td>
+      <td><%= link_to 'Edit', edit_watch_path(watch) %></td>
+      <td><%= link_to 'Destroy', watch_path(watch),
+              method: :delete,
+              data: { confirm: 'Вы уверены?' } %></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'Findphone', controller: 'watches' %>
+<%= link_to 'New watch', new_watch_path %>
