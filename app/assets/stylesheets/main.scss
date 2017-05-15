@@ -10,15 +10,6 @@ h1 {
   margin: 30px 0;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  position: absolute;
-  left: 200px;
-  width: calc(100% - 200px);
-  cursor: default;
-}
-
 main .reg {
   position: absolute;
   right: 0;

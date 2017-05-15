@@ -1,115 +1,4 @@
 <main>
-  <!-- <table style="position:absolute; margin-left:200px;">
-    <tr>
-      <th>Title</th></th>
-      <th>Text</th></th>
-      <th>developer</th>
-      <th>model</th>
-      <th>description</th>
-      <th>m_year</th>
-      <th>resolution_x</th>
-      <th>resolution_y</th>
-      <th>diagonal</th>
-      <th>screen_type</th>
-      <th>dpi</th>
-      <th>multitouch</th>
-      <th>cpu</th>
-      <th>cores</th>
-      <th>frequency</th>
-      <th>gpu</th>
-      <th>inner_mem</th>
-      <th>ram</th>
-      <th>cam</th>
-      <th>megapixels</th>
-      <th>photo_res_x</th>
-      <th>photo_res_y</th>
-      <th>hdr</th>
-      <th>front_megapixels</th>
-      <th>video_res_x</th>
-      <th>video_res_y</th>
-      <th>fps</th>
-      <th>three_g</th>
-      <th>four_g</th>
-      <th>wifi</th>
-      <th>bluetooth</th>
-      <th>nfc</th>
-      <th>gyroscope</th>
-      <th>accelerometer</th>
-      <th>barometer</th>
-      <th>wireless_charge</th>
-      <th>fast_charge</th>
-      <th>type_c</th>
-      <th>vr</th>
-      <th>battery</th>
-      <th>standby_time</th>
-      <th>talk_time</th>
-      <th>os</th>
-      <th>color</th>
-      <th>weight</th>
-      <th>dimensions</th>
-      <th>material</th>
-      <th>protection</th>
-    </tr>
-
-    <% @phones.each do |phone| %>
-      <tr>
-        <td><%= phone.developer %></td>
-        <td><%= phone.model %></td>
-        <td><%= phone.description %></td>
-        <td><%= phone.m_year %></td>
-        <td><%= phone.resolution_x %></td>
-        <td><%= phone.resolution_y %></td>
-        <td><%= phone.diagonal %></td>
-        <td><%= phone.screen_type %></td>
-        <td><%= phone.dpi %></td>
-        <td><%= phone.multitouch %></td>
-        <td><%= phone.cpu %></td>
-        <td><%= phone.cores %></td>
-        <td><%= phone.frequency %></td>
-        <td><%= phone.gpu %></td>
-        <td><%= phone.inner_mem %></td>
-        <td><%= phone.ram %></td>
-        <td><%= phone.cam %></td>
-        <td><%= phone.megapixels %></td>
-        <td><%= phone.photo_res_x %></td>
-        <td><%= phone.photo_res_y %></td>
-        <td><%= phone.hdr %></td>
-        <td><%= phone.front_megapixels %></td>
-        <td><%= phone.video_res_x %></td>
-        <td><%= phone.video_res_y %></td>
-        <td><%= phone.fps %></td>
-        <td><%= phone.three_g %></td>
-        <td><%= phone.four_g %></td>
-        <td><%= phone.wifi %></td>
-        <td><%= phone.bluetooth %></td>
-        <td><%= phone.nfc %></td>
-        <td><%= phone.gyroscope %></td>
-        <td><%= phone.accelerometer %></td>
-        <td><%= phone.barometer %></td>
-        <td><%= phone.wireless_charge %></td>
-        <td><%= phone.fast_charge %></td>
-        <td><%= phone.type_c %></td>
-        <td><%= phone.vr %></td>
-        <td><%= phone.battery %></td>
-        <td><%= phone.standby_time %></td>
-        <td><%= phone.talk_time %></td>
-        <td><%= phone.os %></td>
-        <td><%= phone.color %></td>
-        <td><%= phone.weight %></td>
-        <td><%= phone.dimensions %></td>
-        <td><%= phone.material %></td>
-        <td><%= phone.protection %></td>
-        <td><%= link_to 'Show', phone_path(phone) %></td>
-        <td><%= link_to 'Edit', edit_phone_path(phone) %></td>
-        <td><%= link_to 'Destroy', phone_path(phone),
-                method: :delete,
-                data: { confirm: 'Вы уверены?' } %></td>
-      </tr>
-    <% end %>
-  </table>
-  <%= link_to 'FindPhone', controller: 'phones' %>
-  <%= link_to 'New phone', new_phone_path %> -->
-
   <section class="line">
     <h2>Телефоны</h2>
     <div>
@@ -119,8 +8,9 @@
             <%= image_tag 'phones/googlepixel' %>
             <p><%= phone.developer %> <%= phone.model %></p>
           </article>
-        <% end %>
-      <% end %>
-    </div>
-  </section>
+          <% end %>
+          <% end %>
+        </div>
+      </section>
+      <%= render 'main/footer' %>
 </main>
