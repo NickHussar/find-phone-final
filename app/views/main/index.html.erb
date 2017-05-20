@@ -6,117 +6,119 @@
   <section class="welcome">
     <h1>Вы ищете...</h1>
     <div>
-      <figure>
-        <%= link_to 'phones', controller: 'phones' do %>
+      <%= link_to phones_path, controller: 'phones' do %>
+        <figure>
           <%= image_tag 'icons/smartphone.svg' %>
+          <h3>телефон</h3>
+        </figure>
+      <% end %>
+      <%= link_to tablets_path, controller: 'tablets' do %>
+        <figure>
+            <%= image_tag 'icons/tablet.svg' %>
+            <h3>планшет</h3>
+          </figure>
+      <% end %>
+      <%= link_to transformers_path, controller: 'transformers' do %>
+        <figure>
+            <%= image_tag 'icons/laptop.svg' %>
+            <h3>ноутбук</h3>
+          </figure>
+      <% end %>
+      <%= link_to watches_path, controller: 'watches' do %>
+        <figure>
+            <%= image_tag 'icons/watch.svg' %>
+            <h3>часы</h3>
+          </figure>
+      <% end %>
+    </div>
+    <h4 class="bottom-heading">Больше интересных гаджетов ниже</h4>
+  </section>
+  <div class="container">
+    <section class="line">
+      <h2>Новинки</h2>
+      <div>
+        <article>
+
+        </article>
+        <article>
+
+        </article>
+        <article>
+
+        </article>
+        <article>
+
+        </article>
+        <h2>+</h2>
+      </div>
+    </section>
+    <section class="line">
+      <h2>Телефоны</h2>
+      <div>
+        <% phone = Phone.where(m_year: '2016').each do |phone| %>
+          <%= link_to phone_path(phone) do %>
+            <article>
+              <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
+              <p><%= phone.developer %> <%= phone.model %></p>
+            </article>
+          <% end %>
         <% end %>
-      </figure>
-      <figure>
-        <%= link_to 'tablets', controller: 'tablets' do %>
-          <%= image_tag 'icons/tablet.svg' %>
-        <% end %>
-      </figure>
-      <figure>
-        <%= link_to 'transformers', controller: 'transformers' do %>
-          <%= image_tag 'icons/laptop.svg' %>
-        <% end %>
-      </figure>
-      <figure>
-        <%= link_to 'watches', controller: 'watches' do %>
-          <%= image_tag 'icons/watch.svg' %>
-        <% end %>
-      </figure>
-    </div>
-  </section>
-  <section class="line">
-    <h2>Новинки</h2>
-    <div>
-      <article>
+      </div>
+    </section>
+    <section class="line">
+      <h2>Планшеты</h2>
+      <div>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <h2>+</h2>
-    </div>
-  </section>
-  <section class="line">
-    <h2>Телефоны</h2>
-    <div>
-      <article>
+        </article>
+        <h2>+</h2>
+      </div>
+    </section>
+    <section class="line">
+      <h2>Трансформеры</h2>
+      <div>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <h2>+</h2>
-    </div>
-  </section>
-  <section class="line">
-    <h2>Планшеты</h2>
-    <div>
-      <article>
+        </article>
+        <h2>+</h2>
+      </div>
+    </section>
+    <section class="line">
+      <h2>Умные часы</h2>
+      <div>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <article>
+        </article>
+        <article>
 
-      </article>
-      <h2>+</h2>
-    </div>
-  </section>
-  <section class="line">
-    <h2>Трансформеры</h2>
-    <div>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <h2>+</h2>
-    </div>
-  </section>
-  <section class="line">
-    <h2>Умные часы</h2>
-    <div>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <article>
-
-      </article>
-      <h2>+</h2>
-    </div>
-  </section>
-  <%= render 'main/footer' %>
+        </article>
+        <h2>+</h2>
+      </div>
+    </section>
+  </div>
+  <%= render 'layouts/footer' %>
 </main>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170512175158) do
+ActiveRecord::Schema.define(version: 20170520193426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,7 +27,6 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.string   "developer"
     t.string   "model"
     t.text     "description"
-    t.date     "m_year"
     t.integer  "resolution_x"
     t.integer  "resolution_y"
     t.decimal  "diagonal",         precision: 3, scale: 1
@@ -49,8 +48,8 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.integer  "video_res_x"
     t.integer  "video_res_y"
     t.integer  "fps"
-    t.string   "three_g"
-    t.string   "four_g"
+    t.text     "three_g"
+    t.text     "four_g"
     t.string   "wifi"
     t.string   "bluetooth"
     t.boolean  "nfc"
@@ -72,13 +71,13 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.string   "protection"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.integer  "m_year"
   end
 
   create_table "tablets", force: :cascade do |t|
     t.string   "developer"
     t.string   "model"
     t.text     "description"
-    t.date     "m_year"
     t.integer  "resolution_x"
     t.integer  "resolution_y"
     t.decimal  "diagonal",         precision: 3, scale: 1
@@ -101,8 +100,8 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.integer  "video_res_y"
     t.integer  "fps"
     t.boolean  "phone"
-    t.string   "three_g"
-    t.string   "four_g"
+    t.text     "three_g"
+    t.text     "four_g"
     t.string   "wifi"
     t.string   "bluetooth"
     t.boolean  "nfc"
@@ -123,13 +122,13 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.string   "protection"
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
+    t.integer  "m_year"
   end
 
   create_table "transformers", force: :cascade do |t|
     t.string   "developer"
     t.string   "model"
     t.text     "description"
-    t.date     "m_year"
     t.integer  "resolution_x"
     t.integer  "resolution_y"
     t.decimal  "diagonal",        precision: 3, scale: 1
@@ -171,13 +170,13 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.string   "protection"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.integer  "m_year"
   end
 
   create_table "watches", force: :cascade do |t|
     t.string   "developer"
     t.string   "model"
     t.text     "description"
-    t.date     "m_year"
     t.integer  "resolution_x"
     t.integer  "resolution_y"
     t.decimal  "diagonal",        precision: 3, scale: 1
@@ -235,6 +234,7 @@ ActiveRecord::Schema.define(version: 20170512175158) do
     t.string   "protection"
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
+    t.integer  "m_year"
   end
 
 end

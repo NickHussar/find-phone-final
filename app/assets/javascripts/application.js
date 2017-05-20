@@ -14,3 +14,10 @@
 //= require jquery_ujs
 // = require turbolinks
 //= require_tree .
+
+$(window).on('load', function(){
+  $('td').each(function(){
+    var text = $(this).text();
+    $(this).text(text.replace('true', 'Есть').replace('false', 'Нет'));
+  });
+});
