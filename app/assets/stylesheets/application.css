@@ -144,6 +144,8 @@ main .line div article {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 14pt;
+  min-height: 200px;
+  min-width: 100px;
 }
 
 main .device-form {
