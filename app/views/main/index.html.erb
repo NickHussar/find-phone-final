@@ -1,8 +1,4 @@
 <main>
-  <section class="reg">
-    <a>Вход</a>
-    <a>Регистрация</a>
-  </section>
   <section class="welcome">
     <h1>Вы ищете...</h1>
     <div>
@@ -55,7 +51,7 @@
     <section class="line">
       <h2>Телефоны</h2>
       <div>
-        <% phone = Phone.where(m_year: '2016').each do |phone| %>
+        <% @phone = Phone.where(m_year: '2016').each do |phone| %>
           <%= link_to phone_path(phone) do %>
             <article>
               <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
