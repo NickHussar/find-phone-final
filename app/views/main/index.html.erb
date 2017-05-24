@@ -51,7 +51,7 @@
     <section class="line">
       <h2>Телефоны</h2>
       <div>
-        <% @phones = Phone.where(m_year: '2016').each do |phone| %>
+        <% @phones = Phone.where(:m_year => 2016).each do |phone| %>
           <%= link_to phone_path(phone) do %>
             <article>
               <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
