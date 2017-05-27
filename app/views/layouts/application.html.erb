@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>FindPhone</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -9,7 +10,7 @@
   </head>
 
   <body>
-    <div class="sidebar">
+    <aside>
       <div class="logo">
         <%= image_tag "icons/logotype.svg" %>
         <%= link_to 'FindPhone', controller: 'main'%>
@@ -23,9 +24,9 @@
       <nav class="bottom-menu">
         <a>Избранное</a>
         <a>Сравнение</a>
-      </nav>    
       </nav>
-    </div>
+      </nav>
+    </aside>
     <%= yield %>
   </body>
 </html>

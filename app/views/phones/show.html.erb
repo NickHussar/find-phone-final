@@ -1,7 +1,8 @@
 <main class="main">
   <div class="container">
     <%= link_to phones_path do %><h2>Телефоны<% end %> > <%= @phone.developer %> <%= @phone.model %></h2>
-    <div class="gadget-head">
+    <section class="gadget-head">
+      <h1 class="gadget-caption">Смартфон <%= @phone.developer %> <%= @phone.model %></h1>
       <div class="img-box">
         <%= link_to (image_path 'phones/'+@phone.developer+'_'+@phone.model+'_full'), 'data-fancybox' => 'gallery' do %>
           <% image_tag 'phones/'+@phone.developer+'_'+@phone.model %>
@@ -9,8 +10,7 @@
         <%= link_to (image_path 'phones/'+@phone.developer+'_'+@phone.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
         <% end %>
       </div>
-      <div>
-        <h1 style="color: #009688">Смартфон <%= @phone.developer %> <%= @phone.model %></h1>
+      <div class="main-specs">
         <table class="specs">
           <caption>Основные характеристики:</caption>
           <tr>
@@ -37,7 +37,7 @@
         <%= link_to 'Редактировать', edit_phone_path(@phone), class: "button" %>
         <%= link_to 'Удалить', phone_path(@phone), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
-    </div>
+    </section>
       <table class="specs">
         <caption>Все характеристики:</caption>
         <tr>
@@ -159,9 +159,9 @@
         </tr>
         <tr>
           <td>Время работы в режиме ожидания:</td>
-          <td><%= @phone.standby_time %> часов</td>
+          <td><%= @phone.standby_time %> ч.</td>
           <td>Время работы в режиме разговора:</td>
-          <td><%= @phone.talk_time %> часов</td>
+          <td><%= @phone.talk_time %> ч.</td>
         </tr>
           <td>Батарея:</td>
           <td><%= @phone.battery %> mAh</td>
@@ -172,9 +172,9 @@
         </tr>
         <tr>
           <td>Быстрая зарядка:</td>
-          <td><%= @phone.standby_time %> часов</td>
+          <td><%= @phone.fast_charge %></td>
           <td>Разъем USB 3.0 Type-C:</td>
-          <td><%= @phone.talk_time %> часов</td>
+          <td><%= @phone.type_c %></td>
         </tr>
         <tr>
           <td>VR (виртуальная реальность):</td>

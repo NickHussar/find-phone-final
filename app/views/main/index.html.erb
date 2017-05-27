@@ -1,5 +1,5 @@
 <main>
-  <section class="welcome">
+  <header>
     <h1>Вы ищете...</h1>
     <div>
       <%= link_to phones_path, controller: 'phones' do %>
@@ -27,29 +27,11 @@
           </figure>
       <% end %>
     </div>
-    <h4 class="bottom-heading">Больше интересных гаджетов ниже</h4>
-  </section>
+    <p class="bottom-heading">Больше интересных гаджетов ниже</p>
+  </header>
   <div class="container">
     <section class="line">
       <h2>Новинки</h2>
-      <div>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <h2>+</h2>
-      </div>
-    </section>
-    <section class="line">
-      <h2>Телефоны</h2>
       <div>
         <% @phones = Phone.where(:m_year => 2016).each do |phone| %>
           <%= link_to phone_path(phone) do %>
@@ -62,57 +44,55 @@
       </div>
     </section>
     <section class="line">
+      <h2>Телефоны</h2>
+      <div>
+        <% @phones.each do |phone| %>
+          <%= link_to phone_path(phone) do %>
+            <article>
+              <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
+              <p><%= phone.developer %> <%= phone.model %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+    <section class="line">
       <h2>Планшеты</h2>
       <div>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <h2>+</h2>
+        <% @tablets.each do |tablet| %>
+          <%= link_to tablet_path(tablet) do %>
+            <article>
+              <%= image_tag 'tablets/'+tablet.developer+'_'+tablet.model, alt: tablet.developer+' '+tablet.model %>
+              <p><%= tablet.developer %> <%= tablet.model %></p>
+            </article>
+          <% end %>
+        <% end %>
       </div>
     </section>
     <section class="line">
       <h2>Трансформеры</h2>
       <div>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <h2>+</h2>
+        <% @transformers.each do |transformer| %>
+          <%= link_to transformer_path(transformer) do %>
+            <article>
+              <%= image_tag 'transformers/'+transformer.developer+'_'+transformer.model, alt: transformer.developer+' '+transformer.model %>
+              <p><%= transformer.developer %> <%= transformer.model %></p>
+            </article>
+          <% end %>
+        <% end %>
       </div>
     </section>
     <section class="line">
       <h2>Умные часы</h2>
       <div>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <article>
-
-        </article>
-        <h2>+</h2>
+        <% @watches.each do |watch| %>
+          <%= link_to watch_path(watch) do %>
+            <article>
+              <%= image_tag 'watches/'+watch.developer+'_'+watch.model, alt: watch.developer+' '+watch.model %>
+              <p><%= watch.developer %> <%= watch.model %></p>
+            </article>
+          <% end %>
+        <% end %>
       </div>
     </section>
   </div>

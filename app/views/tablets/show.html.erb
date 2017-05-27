@@ -1,232 +1,200 @@
-<p>
-  <strong>Developer:</strong>
-  <%= @tablet.developer %>
-</p>
-
-<p>
-  <strong>Model:</strong>
-  <%= @tablet.model %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @tablet.description %>
-</p>
-
-<p>
-  <strong>M_year:</strong>
-  <%= @tablet.m_year %>
-</p>
-
-<p>
-  <strong>Resolution_x:</strong>
-  <%= @tablet.resolution_x %>
-</p>
-
-<p>
-  <strong>Resolution_y:</strong>
-  <%= @tablet.resolution_y %>
-</p>
-
-<p>
-  <strong>Diagonal:</strong>
-  <%= @tablet.diagonal %>
-</p>
-
-<p>
-  <strong>Screen_type:</strong>
-  <%= @tablet.screen_type %>
-</p>
-
-<p>
-  <strong>Dpi:</strong>
-  <%= @tablet.dpi %>
-</p>
-
-<p>
-  <strong>Multitouch:</strong>
-  <%= @tablet.multitouch %>
-</p>
-
-<p>
-  <strong>Cpu:</strong>
-  <%= @tablet.cpu %>
-</p>
-
-<p>
-  <strong>Cores:</strong>
-  <%= @tablet.cores %>
-</p>
-
-<p>
-  <strong>Frequency:</strong>
-  <%= @tablet.frequency %>
-</p>
-
-<p>
-  <strong>Gpu:</strong>
-  <%= @tablet.gpu %>
-</p>
-
-<p>
-  <strong>Inner_mem:</strong>
-  <%= @tablet.inner_mem %>
-</p>
-
-<p>
-  <strong>Ram:</strong>
-  <%= @tablet.ram %>
-</p>
-
-<p>
-  <strong>Cam:</strong>
-  <%= @tablet.cam %>
-</p>
-
-<p>
-  <strong>Megapixels:</strong>
-  <%= @tablet.megapixels %>
-</p>
-
-<p>
-  <strong>Photo_res_x:</strong>
-  <%= @tablet.photo_res_x %>
-</p>
-
-<p>
-  <strong>Photo_res_y:</strong>
-  <%= @tablet.photo_res_y %>
-</p>
-
-<p>
-  <strong>Hdr:</strong>
-  <%= @tablet.hdr %>
-</p>
-
-<p>
-  <strong>Front_megapixels:</strong>
-  <%= @tablet.front_megapixels %>
-</p>
-
-<p>
-  <strong>Video_res_x:</strong>
-  <%= @tablet.video_res_x %>
-</p>
-
-<p>
-  <strong>Video_res_y:</strong>
-  <%= @tablet.video_res_y %>
-</p>
-
-<p>
-  <strong>Fps:</strong>
-  <%= @tablet.fps %>
-</p>
-
-<p>
-  <strong>Phone:</strong>
-  <%= @tablet.phone %>
-</p>
-
-<p>
-  <strong>Three_g:</strong>
-  <%= @tablet.three_g %>
-</p>
-
-<p>
-  <strong>Four_g:</strong>
-  <%= @tablet.four_g %>
-</p>
-
-<p>
-  <strong>Wifi:</strong>
-  <%= @tablet.wifi %>
-</p>
-
-<p>
-  <strong>Bluetooth:</strong>
-  <%= @tablet.bluetooth %>
-</p>
-
-<p>
-  <strong>Nfc:</strong>
-  <%= @tablet.nfc %>
-</p>
-
-<p>
-  <strong>Gyroscope:</strong>
-  <%= @tablet.gyroscope %>
-</p>
-
-<p>
-  <strong>Accelerometer:</strong>
-  <%= @tablet.accelerometer %>
-</p>
-
-<p>
-  <strong>Barometer:</strong>
-  <%= @tablet.barometer %>
-</p>
-
-<p>
-  <strong>Wireless_charge:</strong>
-  <%= @tablet.wireless_charge %>
-</p>
-
-<p>
-  <strong>Fast_charge:</strong>
-  <%= @tablet.fast_charge %>
-</p>
-
-<p>
-  <strong>Type_c:</strong>
-  <%= @tablet.type_c %>
-</p>
-
-<p>
-  <strong>Battery:</strong>
-  <%= @tablet.battery %>
-</p>
-
-<p>
-  <strong>Standby_time:</strong>
-  <%= @tablet.standby_time %>
-</p>
-
-<p>
-  <strong>Talk_time:</strong>
-  <%= @tablet.talk_time %>
-</p>
-
-<p>
-  <strong>OS:</strong>
-  <%= @tablet.os %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @tablet.color %>
-</p>
-
-<p>
-  <strong>Weight:</strong>
-  <%= @tablet.weight %>
-</p>
-
-<p>
-  <strong>Dimensions:</strong>
-  <%= @tablet.dimensions %>
-</p>
-
-<p>
-  <strong>Material:</strong>
-  <%= @tablet.material %>
-</p>
-
-<p>
-  <strong>Protection:</strong>
-  <%= @tablet.protection %>
-</p>
-
-<%= link_to 'Edit', edit_tablet_path(@tablet) %>
-<%= link_to 'Back', tablets_path %>
+<main class="main">
+  <div class="container">
+    <%= link_to tablets_path do %><h2>Телефоны<% end %> > <%= @tablet.developer %> <%= @tablet.model %></h2>
+    <section class="gadget-head">
+      <h1 class="gadget-caption">Планшет <%= @tablet.developer %> <%= @tablet.model %></h1>
+      <div class="img-box">
+        <%= link_to (image_path 'tablets/'+@tablet.developer+'_'+@tablet.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'tablets/'+@tablet.developer+'_'+@tablet.model %>
+        <% end %>
+        <%= link_to (image_path 'tablets/'+@tablet.developer+'_'+@tablet.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <% end %>
+      </div>
+      <div class="main-specs">
+        <table class="specs">
+          <caption>Основные характеристики:</caption>
+          <tr>
+            <td>Производитель:</td>
+            <td><%= @tablet.developer %></td>
+          </tr>
+          <tr>
+            <td>Модель:</td>
+            <td><%= @tablet.model %></td>
+          </tr>
+          <tr>
+            <td>Год выпуска:</td>
+            <td><%= @tablet.m_year %></td>
+          </tr>
+          <tr>
+            <td>Операционная система:</td>
+            <td><%= @tablet.os %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="edit-buttons">
+        <%= link_to 'Сравнить', edit_tablet_path(@tablet), class: "button" %>
+        <%= link_to 'Избранное', edit_tablet_path(@tablet), class: "button" %>
+        <%= link_to 'Редактировать', edit_tablet_path(@tablet), class: "button" %>
+        <%= link_to 'Удалить', tablet_path(@tablet), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
+      </div>
+    </section>
+      <table class="specs">
+        <caption>Все характеристики:</caption>
+        <tr>
+          <td class="sub-heading">Описание:</td>
+        </tr>
+        <tr>
+          <td colspan="4"><%= @tablet.description %></td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Экран:</td>
+        </tr>
+        <tr>
+          <td>Разрешение экрана:</td>
+          <td><%= @tablet.resolution_x %> x <%= @tablet.resolution_y %> px</td>
+          <td>Диагональ экрана (дюймы):</td>
+          <td><%= @tablet.diagonal %></td>
+        </tr>
+        <tr>
+          <td>Тип экрана:</td>
+          <td><%= @tablet.screen_type %></td>
+          <td>DPI (точек на дюйм):</td>
+          <td><%= @tablet.dpi %> ppi</td>
+        </tr>
+        <tr>
+          <td>Мультитач (одновременных касаний):</td>
+          <td><%= @tablet.multitouch %></td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Процессор:</td>
+        </tr>
+        <tr>
+          <td>CPU:</td>
+          <td><%= @tablet.cpu %></td>
+          <td>Количество ядер:</td>
+          <td><%= @tablet.cores %></td>
+        </tr>
+        <tr>
+          <td>Частота ядер процессора:</td>
+          <td><%= @tablet.frequency %> GHz</td>
+          <td>GPU:</td>
+          <td><%= @tablet.gpu %></td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Память:</td>
+        </tr>
+        <tr>
+          <td>Внутренняя память:</td>
+          <td><%= @tablet.inner_mem %> GB</td>
+          <td>Оперативная память:</td>
+          <td><%= @tablet.ram %> GB</td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Камера:</td>
+        </tr>
+        <tr>
+          <td>Модуль камеры:</td>
+          <td><%= @tablet.cam %></td>
+          <td>Количество мегапикселей:</td>
+          <td><%= @tablet.megapixels %> MP</td>
+        </tr>
+        <tr>
+          <td>Разрешение фотографий:</td>
+          <td><%= @tablet.photo_res_x %> x <%= @tablet.photo_res_y %> px</td>
+          <td>Разрешение видео:</td>
+          <td><%= @tablet.video_res_x %> x <%= @tablet.video_res_y %> px</td>
+        </tr>
+        <tr>
+          <td>FPS (Кадров в секунду):</td>
+          <td><%= @tablet.fps %></td>
+          <td>HDR:</td>
+          <td><%= @tablet.hdr %></td>
+        </tr>
+        <tr>
+          <td>Количество мегапикселей фронт. камеры:</td>
+          <td><%= @tablet.front_megapixels %> MP</td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Беспроводные интерфейсы:</td>
+        </tr>
+        <tr>
+          <td>3G:</td>
+        </tr>
+        <tr>
+          <td colspan="4" style="color: #009688"><%= @tablet.three_g %></td>
+        </tr>
+        <tr>
+        <tr>
+          <td>4G:</td>
+        </tr>
+          <td colspan="4" style="color: #009688"><%= @tablet.four_g %></td>
+        </tr>
+        <tr>
+          <td>WiFi:</td>
+          <td><%= @tablet.wifi %></td>
+          <td>Bluetooth:</td>
+          <td><%= @tablet.bluetooth %></td>
+        </tr>
+        <tr>
+          <td>NFC:</td>
+          <td><%= @tablet.nfc %></td>
+          <td>Беспроводная зарядка:</td>
+          <td><%= @tablet.wireless_charge %></td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Датчики:</td>
+        </tr>
+        <tr>
+          <td>Гироскоп:</td>
+          <td><%= @tablet.gyroscope %></td>
+          <td>Акселерометр:</td>
+          <td><%= @tablet.accelerometer %></td>
+        </tr>
+        <tr>
+          <td>Барометр:</td>
+          <td><%= @tablet.barometer %></td>
+        </tr>
+        <tr>
+          <td class="sub-heading">Время работы:</td>
+        </tr>
+        <tr>
+          <td>Время работы в режиме ожидания:</td>
+          <td><%= @tablet.standby_time %> ч.</td>
+          <td>Время работы в режиме разговора:</td>
+          <td><%= @tablet.talk_time %> ч.</td>
+        </tr>
+          <td>Батарея:</td>
+          <td><%= @tablet.battery %> mAh</td>
+        <tr>
+        </tr>
+        <tr>
+          <td class="sub-heading">Прочее:</td>
+        </tr>
+        <tr>
+          <td>Быстрая зарядка:</td>
+          <td><%= @tablet.fast_charge %></td>
+          <td>Разъем USB 3.0 Type-C:</td>
+          <td><%= @tablet.type_c %></td>
+        </tr>
+        <tr>
+          <td>Поддержка сим-карт:</td>
+          <td><%= @tablet.phone %></td>
+          <td>Цвета:</td>
+          <td><%= @tablet.color %></td>
+        </tr>
+        <tr>
+          <td>Вес:</td>
+          <td><%= @tablet.weight %> гр.</td>
+          <td>Размеры (ДxШxВ):</td>
+          <td><%= @tablet.dimensions %></td>
+        </tr>
+        <tr>
+          <td>Материал корпуса:</td>
+          <td><%= @tablet.material %></td>
+          <td>Степень защиты:</td>
+          <td><%= @tablet.protection %></td>
+        </tr>
+      </table>
+    </div>
+  <%= render 'layouts/footer' %>
+</main>

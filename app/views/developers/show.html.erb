@@ -1,17 +1,31 @@
-<p>
-  <strong>Название:</strong>
-  <%= @developer.name %>
-</p>
-
-<p>
-  <strong>Описание:</strong>
-  <%= @developer.description %>
-</p>
-
-<p>
-  <strong>Устройства:</strong>
-  <%= @developer.devices %>
-</p>
-
-<%= link_to 'Edit', edit_developer_path(@developer) %>
-<%= link_to 'Back', developers_path %>
+<main class="main">
+  <div class="container">
+    <%= link_to developers_path do %><h2>Телефоны<% end %> > <%= @developer.developer %> <%= @developer.model %></h2>
+    <div class="gadget-head">
+      <div class="img-box">
+        <%= link_to (image_path 'developers/'+@developer.developer+'_'+@developer.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'developers/'+@developer.developer+'_'+@developer.model %>
+        <% end %>
+        <%= link_to (image_path 'developers/'+@developer.developer+'_'+@developer.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <% end %>
+      </div>
+      <div>
+        <h1 style="color: #009688">Разработчик <%= @developer.name %></h1>
+        <table class="specs">
+          <caption>Основная информация:</caption>
+          <tr>
+            <td>Описание:</td>
+            <td><%= @developer.description %></td>
+          </tr>
+          <tr>
+            <td>Устройства:</td>
+            <td><%= @developer.devices %></td>
+          </tr>
+        </table>
+      </div>
+      <div class="edit-buttons">
+        <%= link_to 'Редактировать', edit_developer_path(@developer), class: "button" %>
+        <%= link_to 'Удалить', developer_path(@developer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
+      </div>
+  <%= render 'layouts/footer' %>
+</main>
