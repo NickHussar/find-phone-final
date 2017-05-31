@@ -20,6 +20,6 @@ Rails.application.routes.draw do
   root 'transformers#index'
 
   resources :developers
-
+    
   root 'developers#index'
 end

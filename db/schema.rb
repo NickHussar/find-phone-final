@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170520193426) do
+ActiveRecord::Schema.define(version: 20170530195516) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170520193426) do
   end
 
   create_table "phones", force: :cascade do |t|
-    t.string   "developer"
     t.string   "model"
     t.text     "description"
     t.integer  "resolution_x"
@@ -72,10 +71,11 @@ ActiveRecord::Schema.define(version: 20170520193426) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "m_year"
+    t.integer  "developer_id"
+    t.index ["developer_id"], name: "index_phones_on_developer_id", using: :btree
   end
 
   create_table "tablets", force: :cascade do |t|
-    t.string   "developer"
     t.string   "model"
     t.text     "description"
     t.integer  "resolution_x"
@@ -123,10 +123,11 @@ ActiveRecord::Schema.define(version: 20170520193426) do
     t.datetime "created_at",                               null: false
     t.datetime "updated_at",                               null: false
     t.integer  "m_year"
+    t.integer  "developer_id"
+    t.index ["developer_id"], name: "index_tablets_on_developer_id", using: :btree
   end
 
   create_table "transformers", force: :cascade do |t|
-    t.string   "developer"
     t.string   "model"
     t.text     "description"
     t.integer  "resolution_x"
@@ -171,10 +172,11 @@ ActiveRecord::Schema.define(version: 20170520193426) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.integer  "m_year"
+    t.integer  "developer_id"
+    t.index ["developer_id"], name: "index_transformers_on_developer_id", using: :btree
   end
 
   create_table "watches", force: :cascade do |t|
-    t.string   "developer"
     t.string   "model"
     t.text     "description"
     t.integer  "resolution_x"
@@ -235,6 +237,12 @@ ActiveRecord::Schema.define(version: 20170520193426) do
     t.datetime "created_at",                              null: false
     t.datetime "updated_at",                              null: false
     t.integer  "m_year"
+    t.integer  "developer_id"
+    t.index ["developer_id"], name: "index_watches_on_developer_id", using: :btree
   end
 
+  add_foreign_key "phones", "developers"
+  add_foreign_key "tablets", "developers"
+  add_foreign_key "transformers", "developers"
+  add_foreign_key "watches", "developers"
 end

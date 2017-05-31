@@ -31,26 +31,13 @@
   </header>
   <div class="container">
     <section class="line">
-      <h2>Новинки</h2>
-      <div>
-        <% @phones = Phone.where(:m_year => 2016).each do |phone| %>
-          <%= link_to phone_path(phone) do %>
-            <article>
-              <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
-              <p><%= phone.developer %> <%= phone.model %></p>
-            </article>
-          <% end %>
-        <% end %>
-      </div>
-    </section>
-    <section class="line">
       <h2>Телефоны</h2>
       <div>
         <% @phones.each do |phone| %>
-          <%= link_to phone_path(phone) do %>
+          <%= link_to phones_path(phone) do %>
             <article>
-              <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
-              <p><%= phone.developer %> <%= phone.model %></p>
+              <%= image_tag 'phones/'+phone.model, alt: phone.model %>
+              <p>Google Pixel</p>
             </article>
           <% end %>
         <% end %>
@@ -60,10 +47,10 @@
       <h2>Планшеты</h2>
       <div>
         <% @tablets.each do |tablet| %>
-          <%= link_to tablet_path(tablet) do %>
+          <%= link_to tablets_path(tablet) do %>
             <article>
-              <%= image_tag 'tablets/'+tablet.developer+'_'+tablet.model, alt: tablet.developer+' '+tablet.model %>
-              <p><%= tablet.developer %> <%= tablet.model %></p>
+              <%= image_tag 'tablets/'+tablet.model, alt: tablet.model %>
+              <p>Google Pixel C</p>
             </article>
           <% end %>
         <% end %>
@@ -73,10 +60,10 @@
       <h2>Трансформеры</h2>
       <div>
         <% @transformers.each do |transformer| %>
-          <%= link_to transformer_path(transformer) do %>
+          <%= link_to transformers_path(transformer) do %>
             <article>
-              <%= image_tag 'transformers/'+transformer.developer+'_'+transformer.model, alt: transformer.developer+' '+transformer.model %>
-              <p><%= transformer.developer %> <%= transformer.model %></p>
+              <%= image_tag 'transformers/'+transformer.model, alt: transformer.model %>
+              <p></p>
             </article>
           <% end %>
         <% end %>
@@ -86,10 +73,10 @@
       <h2>Умные часы</h2>
       <div>
         <% @watches.each do |watch| %>
-          <%= link_to watch_path(watch) do %>
+          <%= link_to watches_path(watch) do %>
             <article>
-              <%= image_tag 'watches/'+watch.developer+'_'+watch.model, alt: watch.developer+' '+watch.model %>
-              <p><%= watch.developer %> <%= watch.model %></p>
+              <%= image_tag 'watches/'+watch.model, alt: watch.model %>
+              <p></p>
             </article>
           <% end %>
         <% end %>

@@ -1,16 +1,13 @@
 <main class="main">
   <div class="container">
-    <div class="sorting">
-
-    </div>
     <h2>Разработчики</h2>
     <section class="line">
       <div>
         <% @developers.each do |developer| %>
           <%= link_to developer_path(developer) do %>
             <article>
-              <%= image_tag 'developers/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
-              <p><%= developer.developer %> <%= developer.model %></p>
+              <%= image_tag 'developers/'+developer.name, alt: developer.name %>
+              <p><%= developer.name %></p>
             </article>
           <% end %>
         <% end %>

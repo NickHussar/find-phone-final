@@ -1,18 +1,13 @@
 <main class="main">
   <div class="container">
-    <%= link_to developers_path do %><h2>Телефоны<% end %> > <%= @developer.developer %> <%= @developer.model %></h2>
+    <%= link_to developers_path do %><h2>Разработчики<% end %> > <%= @developer.name %></h2>
     <div class="gadget-head">
       <div class="img-box">
-        <%= link_to (image_path 'developers/'+@developer.developer+'_'+@developer.model+'_full'), 'data-fancybox' => 'gallery' do %>
-          <% image_tag 'developers/'+@developer.developer+'_'+@developer.model %>
-        <% end %>
-        <%= link_to (image_path 'developers/'+@developer.developer+'_'+@developer.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
-        <% end %>
+        <%= image_tag 'developers/'+@developer.name %>
       </div>
       <div>
-        <h1 style="color: #009688">Разработчик <%= @developer.name %></h1>
+        <h1 style="color: #009688"><%= @developer.name %></h1>
         <table class="specs">
-          <caption>Основная информация:</caption>
           <tr>
             <td>Описание:</td>
             <td><%= @developer.description %></td>
@@ -27,5 +22,7 @@
         <%= link_to 'Редактировать', edit_developer_path(@developer), class: "button" %>
         <%= link_to 'Удалить', developer_path(@developer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
+    </div>
+  </div>
   <%= render 'layouts/footer' %>
 </main>

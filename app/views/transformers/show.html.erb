@@ -1,13 +1,13 @@
 <main class="main">
   <div class="container">
-    <%= link_to transformers_path do %><h2>Телефоны<% end %> > <%= @transformer.developer %> <%= @transformer.model %></h2>
+    <%= link_to transformers_path do %><h2>Телефоны<% end %> > <%= @transformer.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Трансформер <%= @transformer.developer %> <%= @transformer.model %></h1>
+      <h1 class="gadget-caption">Трансформер <%= @transformer.model %></h1>
       <div class="img-box">
-        <%= link_to (image_path 'transformers/'+@transformer.developer+'_'+@transformer.model+'_full'), 'data-fancybox' => 'gallery' do %>
-          <% image_tag 'transformers/'+@transformer.developer+'_'+@transformer.model %>
+        <%= link_to (image_path 'transformers/'+@transformer.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'transformers/'+@transformer.model %>
         <% end %>
-        <%= link_to (image_path 'transformers/'+@transformer.developer+'_'+@transformer.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <%= link_to (image_path 'transformers/'+@transformer.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
         <% end %>
       </div>
       <div class="main-specs">
@@ -15,7 +15,7 @@
           <caption>Основные характеристики:</caption>
           <tr>
             <td>Производитель:</td>
-            <td><%= @transformer.developer %></td>
+            <td>ASUS</td>
           </tr>
           <tr>
             <td>Модель:</td>
@@ -32,8 +32,8 @@
         </table>
       </div>
       <div class="edit-buttons">
-        <%= link_to 'Сравнить', edit_transformer_path(@transformer), class: "button" %>
-        <%= link_to 'Избранное', edit_transformer_path(@transformer), class: "button" %>
+        <!-- <%= link_to 'Сравнить', edit_transformer_path(@transformer), class: "button" %>
+        <%= link_to 'Избранное', edit_transformer_path(@transformer), class: "button" %> -->
         <%= link_to 'Редактировать', edit_transformer_path(@transformer), class: "button" %>
         <%= link_to 'Удалить', transformer_path(@transformer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>

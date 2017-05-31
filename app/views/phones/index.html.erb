@@ -9,8 +9,8 @@
         <% @phones.each do |phone| %>
           <%= link_to phone_path(phone) do %>
             <article>
-              <%= image_tag 'phones/'+phone.developer+'_'+phone.model, alt: phone.developer+' '+phone.model %>
-              <p><%= phone.developer %> <%= phone.model %></p>
+              <%= image_tag 'phones/'+phone.model, alt: phone.model %>
+              <p><%= phone.model %></p>
             </article>
           <% end %>
         <% end %>

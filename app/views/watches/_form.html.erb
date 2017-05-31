@@ -17,10 +17,6 @@
     <% end %>
       <div class="device-form">
         <p>
-          <%= f.label :developer %><br>
-          <%= f.text_field :developer %>
-        </p>
-        <p>
           <%= f.label :model %><br>
           <%= f.text_field :model %>
         </p>
@@ -256,7 +252,7 @@
           <%= f.submit(class: "button", value: "Обновить") %>
         </p>
         <p>
-          <%= link_to "Назад", watch_path(:id), class: "button" %>
+          <%= link_to "Назад", watches_path(:id), class: "button" %>
         </p>
       </div>
     <% end %>

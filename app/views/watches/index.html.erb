@@ -9,8 +9,8 @@
         <% @watches.each do |watch| %>
           <%= link_to watch_path(watch) do %>
             <article>
-              <%= image_tag 'watches/'+watch.developer+'_'+watch.model, alt: watch.developer+' '+watch.model %>
-              <p><%= watch.developer %> <%= watch.model %></p>
+              <%= image_tag 'watches/'+watch.model, alt: watch.model %>
+              <p><%= watch.model %></p>
             </article>
           <% end %>
         <% end %>

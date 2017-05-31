@@ -1,13 +1,13 @@
 <main class="main">
   <div class="container">
-    <%= link_to phones_path do %><h2>Телефоны<% end %> > <%= @phone.developer %> <%= @phone.model %></h2>
+    <%= link_to phones_path do %><h2>Телефоны<% end %> > <%= @phone.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Смартфон <%= @phone.developer %> <%= @phone.model %></h1>
+      <h1 class="gadget-caption">Смартфон <%= @phone.model %></h1>
       <div class="img-box">
-        <%= link_to (image_path 'phones/'+@phone.developer+'_'+@phone.model+'_full'), 'data-fancybox' => 'gallery' do %>
-          <% image_tag 'phones/'+@phone.developer+'_'+@phone.model %>
+        <%= link_to (image_path 'phones/'+@phone.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'phones/'+@phone.model %>
         <% end %>
-        <%= link_to (image_path 'phones/'+@phone.developer+'_'+@phone.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <%= link_to (image_path 'phones/'+@phone.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
         <% end %>
       </div>
       <div class="main-specs">
@@ -15,7 +15,7 @@
           <caption>Основные характеристики:</caption>
           <tr>
             <td>Производитель:</td>
-            <td><%= @phone.developer %></td>
+            <td>Google</td>
           </tr>
           <tr>
             <td>Модель:</td>
@@ -32,8 +32,8 @@
         </table>
       </div>
       <div class="edit-buttons">
-        <%= link_to 'Сравнить', edit_phone_path(@phone), class: "button" %>
-        <%= link_to 'Избранное', edit_phone_path(@phone), class: "button" %>
+        <!-- <%= link_to 'Сравнить', edit_phone_path(@phone), class: "button" %>
+        <%= link_to 'Избранное', edit_phone_path(@phone), class: "button" %> -->
         <%= link_to 'Редактировать', edit_phone_path(@phone), class: "button" %>
         <%= link_to 'Удалить', phone_path(@phone), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>

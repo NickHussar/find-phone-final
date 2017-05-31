@@ -1,13 +1,13 @@
 <main class="main">
   <div class="container">
-    <%= link_to watches_path do %><h2>Телефоны<% end %> > <%= @watch.developer %> <%= @watch.model %></h2>
+    <%= link_to watches_path do %><h2>Телефоны<% end %> > <%= @watch.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Часы <%= @watch.developer %> <%= @watch.model %></h1>
+      <h1 class="gadget-caption">Часы <%= @watch.model %></h1>
       <div class="img-box">
-        <%= link_to (image_path 'watches/'+@watch.developer+'_'+@watch.model+'_full'), 'data-fancybox' => 'gallery' do %>
-          <% image_tag 'watches/'+@watch.developer+'_'+@watch.model %>
+        <%= link_to (image_path 'watches/'+@watch.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'watches/'+@watch.model %>
         <% end %>
-        <%= link_to (image_path 'watches/'+@watch.developer+'_'+@watch.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <%= link_to (image_path 'watches/'+@watch.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
         <% end %>
       </div>
       <div class="main-specs">
@@ -15,7 +15,7 @@
           <caption>Основные характеристики:</caption>
           <tr>
             <td>Производитель:</td>
-            <td><%= @watch.developer %></td>
+            <td>LG</td>
           </tr>
           <tr>
             <td>Модель:</td>
@@ -32,8 +32,8 @@
         </table>
       </div>
       <div class="edit-buttons">
-        <%= link_to 'Сравнить', edit_watch_path(@watch), class: "button" %>
-        <%= link_to 'Избранное', edit_watch_path(@watch), class: "button" %>
+        <!-- <%= link_to 'Сравнить', edit_watch_path(@watch), class: "button" %>
+        <%= link_to 'Избранное', edit_watch_path(@watch), class: "button" %> -->
         <%= link_to 'Редактировать', edit_watch_path(@watch), class: "button" %>
         <%= link_to 'Удалить', watch_path(@watch), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>

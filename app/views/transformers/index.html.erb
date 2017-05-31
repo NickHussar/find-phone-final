@@ -9,8 +9,8 @@
         <% @transformers.each do |transformer| %>
           <%= link_to transformer_path(transformer) do %>
             <article>
-              <%= image_tag 'transformers/'+transformer.developer+'_'+transformer.model, alt: transformer.developer+' '+transformer.model %>
-              <p><%= transformer.developer %> <%= transformer.model %></p>
+              <%= image_tag 'transformers/'+transformer.model, alt: transformer.model %>
+              <p><%= transformer.model %></p>
             </article>
           <% end %>
         <% end %>

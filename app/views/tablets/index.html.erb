@@ -9,8 +9,8 @@
         <% @tablets.each do |tablet| %>
           <%= link_to tablet_path(tablet) do %>
             <article>
-              <%= image_tag 'tablets/'+tablet.developer+'_'+tablet.model, alt: tablet.developer+' '+tablet.model %>
-              <p><%= tablet.developer %> <%= tablet.model %></p>
+              <%= image_tag 'tablets/'+tablet.model, alt: tablet.model %>
+              <p><%= tablet.model %></p>
             </article>
           <% end %>
         <% end %>

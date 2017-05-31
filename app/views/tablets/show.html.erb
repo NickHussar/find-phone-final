@@ -1,13 +1,13 @@
 <main class="main">
   <div class="container">
-    <%= link_to tablets_path do %><h2>Телефоны<% end %> > <%= @tablet.developer %> <%= @tablet.model %></h2>
+    <%= link_to tablets_path do %><h2>Телефоны<% end %> > <%= @tablet.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Планшет <%= @tablet.developer %> <%= @tablet.model %></h1>
+      <h1 class="gadget-caption">Планшет <%= @tablet.model %></h1>
       <div class="img-box">
-        <%= link_to (image_path 'tablets/'+@tablet.developer+'_'+@tablet.model+'_full'), 'data-fancybox' => 'gallery' do %>
-          <% image_tag 'tablets/'+@tablet.developer+'_'+@tablet.model %>
+        <%= link_to (image_path 'tablets/'+@tablet.model+'_full'), 'data-fancybox' => 'gallery' do %>
+          <% image_tag 'tablets/'+@tablet.model %>
         <% end %>
-        <%= link_to (image_path 'tablets/'+@tablet.developer+'_'+@tablet.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
+        <%= link_to (image_path 'tablets/'+@tablet.model+'_full_back'), 'data-fancybox' => 'gallery' do %>
         <% end %>
       </div>
       <div class="main-specs">
@@ -15,7 +15,7 @@
           <caption>Основные характеристики:</caption>
           <tr>
             <td>Производитель:</td>
-            <td><%= @tablet.developer %></td>
+            <td>Google</td>
           </tr>
           <tr>
             <td>Модель:</td>
@@ -32,8 +32,8 @@
         </table>
       </div>
       <div class="edit-buttons">
-        <%= link_to 'Сравнить', edit_tablet_path(@tablet), class: "button" %>
-        <%= link_to 'Избранное', edit_tablet_path(@tablet), class: "button" %>
+        <!-- <%= link_to 'Сравнить', edit_tablet_path(@tablet), class: "button" %>
+        <%= link_to 'Избранное', edit_tablet_path(@tablet), class: "button" %> -->
         <%= link_to 'Редактировать', edit_tablet_path(@tablet), class: "button" %>
         <%= link_to 'Удалить', tablet_path(@tablet), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>

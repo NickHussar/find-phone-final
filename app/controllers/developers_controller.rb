@@ -1,5 +1,7 @@
 class DevelopersController < ApplicationController
+
   http_basic_authenticate_with name: 'Twirx', password: 'maslenak', except: [:index, :show]
+
   def index
     @developers = Developer.all
   end
