@@ -4,7 +4,6 @@ class WatchesController < ApplicationController
 
   def index
     @watches = Watch.all
-    @developers = Developer.all
   end
 
   def show
@@ -13,6 +12,8 @@ class WatchesController < ApplicationController
 
   def new
     @watch = Watch.new
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def edit
@@ -23,6 +24,8 @@ class WatchesController < ApplicationController
 
   def create
     @watch = Watch.new(watch_params)
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @watch.save
       redirect_to @watch
@@ -33,6 +36,8 @@ class WatchesController < ApplicationController
 
   def update
     @watch = Watch.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @watch.update(watch_params)
       redirect_to @watch

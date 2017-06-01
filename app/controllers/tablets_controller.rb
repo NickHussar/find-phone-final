@@ -4,7 +4,6 @@ class TabletsController < ApplicationController
 
   def index
     @tablets = Tablet.all
-    @developers = Developer.all
   end
 
   def show
@@ -13,6 +12,8 @@ class TabletsController < ApplicationController
 
   def new
     @tablet = Tablet.new
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def edit
@@ -23,6 +24,8 @@ class TabletsController < ApplicationController
 
   def create
     @tablet = Tablet.new(tablet_params)
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @tablet.save
       redirect_to @tablet
@@ -33,6 +36,8 @@ class TabletsController < ApplicationController
 
   def update
     @tablet = Tablet.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @tablet.update(tablet_params)
       redirect_to @tablet

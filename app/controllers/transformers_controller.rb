@@ -4,7 +4,6 @@ class TransformersController < ApplicationController
 
   def index
     @transformers = Transformer.all
-    @developers = Developer.all
   end
 
   def show
@@ -13,6 +12,8 @@ class TransformersController < ApplicationController
 
   def new
     @transformer = Transformer.new
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def edit
@@ -23,6 +24,8 @@ class TransformersController < ApplicationController
 
   def create
     @transformer = Transformer.new(transformer_params)
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @transformer.save
       redirect_to @transformer
@@ -33,6 +36,8 @@ class TransformersController < ApplicationController
 
   def update
     @transformer = Transformer.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @transformer.update(transformer_params)
       redirect_to @transformer

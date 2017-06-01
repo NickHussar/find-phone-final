@@ -37,7 +37,7 @@
           <%= link_to phones_path(phone) do %>
             <article>
               <%= image_tag 'phones/'+phone.model, alt: phone.model %>
-              <p>Google Pixel</p>
+              <p><%= phone.model %></p>
             </article>
           <% end %>
         <% end %>
@@ -50,7 +50,7 @@
           <%= link_to tablets_path(tablet) do %>
             <article>
               <%= image_tag 'tablets/'+tablet.model, alt: tablet.model %>
-              <p>Google Pixel C</p>
+              <p><%= tablet.model %></p>
             </article>
           <% end %>
         <% end %>
@@ -63,7 +63,7 @@
           <%= link_to transformers_path(transformer) do %>
             <article>
               <%= image_tag 'transformers/'+transformer.model, alt: transformer.model %>
-              <p></p>
+              <p><%= transformer.model %></p>
             </article>
           <% end %>
         <% end %>
@@ -76,7 +76,7 @@
           <%= link_to watches_path(watch) do %>
             <article>
               <%= image_tag 'watches/'+watch.model, alt: watch.model %>
-              <p></p>
+              <p><%= watch.model %></p>
             </article>
           <% end %>
         <% end %>

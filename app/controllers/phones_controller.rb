@@ -12,6 +12,8 @@ class PhonesController < ApplicationController
 
   def new
     @phone = Phone.new
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def edit
@@ -22,6 +24,8 @@ class PhonesController < ApplicationController
 
   def create
     @phone = Phone.new(phone_params)
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @phone.save
       redirect_to @phone
@@ -32,6 +36,8 @@ class PhonesController < ApplicationController
 
   def update
     @phone = Phone.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
 
     if @phone.update(phone_params)
       redirect_to @phone

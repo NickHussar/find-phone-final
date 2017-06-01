@@ -8,19 +8,27 @@ Rails.application.routes.draw do
 
   root 'main#index'
 
-  resources :phones
+  resources :phones do
+    resources :developers, controller: 'developers'
+  end
 
   root 'phones#index'
 
-  resources :tablets
+  resources :tablets do
+    resources :developers, controller: 'developers'
+  end
 
   root 'tablets#index'
 
-  resources :watches
+  resources :watches do
+    resources :developers, controller: 'developers'
+  end
 
   root 'watches#index'
 
-  resources :transformers
+  resources :transformers do
+    resources :developers, controller: 'developers'
+  end
 
   root 'transformers#index'
 
