@@ -14,8 +14,6 @@
  *= require_self
  */
 
-@import url(https://fonts.googleapis.com/css?family=Lato:300|Open+Sans|Roboto:400,700);
-
 * {
   margin: 0;
   padding: 0;
@@ -130,6 +128,7 @@ main .line div {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
+  margin-top: 10px;
 }
 
 main .line div article {
