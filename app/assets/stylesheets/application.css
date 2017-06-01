@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import url(https://fonts.googleapis.com/css?family=Lato:300|Open+Sans|Roboto:400,700);
+
 * {
   margin: 0;
   padding: 0;
