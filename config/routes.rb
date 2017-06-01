@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'main/index'
 
   resources :phones, :tablets, :transformers, :watches
-  
+
   root 'main#index'
 
   resources :phones
