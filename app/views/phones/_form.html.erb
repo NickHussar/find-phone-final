@@ -16,6 +16,11 @@
       </div>
     <% end %>
       <div class="device-form">
+        <select>
+          <% @developer.each do |developer| %>
+            <option><%= @developer.name %></option>
+          <% end %>
+        </select>
         <p>
           <%= f.label :model %><br>
           <%= f.text_field :model %>
