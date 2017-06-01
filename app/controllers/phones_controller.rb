@@ -16,6 +16,8 @@ class PhonesController < ApplicationController
 
   def edit
     @phone = Phone.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def create

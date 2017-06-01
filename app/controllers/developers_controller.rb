@@ -8,6 +8,10 @@ class DevelopersController < ApplicationController
 
   def show
     @developer = Developer.find(params[:id])
+    @phones = Phone.all
+    @tablets = Tablet.all
+    @transformers = Transformer.all
+    @watches = Watch.all
   end
 
   def new

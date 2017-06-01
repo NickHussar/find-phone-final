@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'main/index'
 
-  resources :phones, :tablets, :transformers, :watches
+  resources :phones, controller: 'phones'
+  resources :tablets, controller: 'tablets'
+  resources :transformers, controller: 'transformers'
+  resources :watches, controller: 'watches'
 
   root 'main#index'
 
@@ -21,7 +24,12 @@ Rails.application.routes.draw do
 
   root 'transformers#index'
 
-  resources :developers
+  resources :developers do
+    resources :phones, controller: 'phones'
+    resources :tablets, controller: 'tablets'
+    resources :transformers, controller: 'transformers'
+    resources :watches, controller: 'watches'
+  end
 
   root 'developers#index'
 end

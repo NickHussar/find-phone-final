@@ -4,6 +4,7 @@ class WatchesController < ApplicationController
 
   def index
     @watches = Watch.all
+    @developers = Developer.all
   end
 
   def show
@@ -16,6 +17,8 @@ class WatchesController < ApplicationController
 
   def edit
     @watch = Watch.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def create

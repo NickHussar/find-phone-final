@@ -4,6 +4,7 @@ class TabletsController < ApplicationController
 
   def index
     @tablets = Tablet.all
+    @developers = Developer.all
   end
 
   def show
@@ -16,6 +17,8 @@ class TabletsController < ApplicationController
 
   def edit
     @tablet = Tablet.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def create

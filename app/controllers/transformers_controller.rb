@@ -4,6 +4,7 @@ class TransformersController < ApplicationController
 
   def index
     @transformers = Transformer.all
+    @developers = Developer.all
   end
 
   def show
@@ -16,6 +17,8 @@ class TransformersController < ApplicationController
 
   def edit
     @transformer = Transformer.find(params[:id])
+    @developers = Developer.all
+    @developer = Developer.find(params[:id])
   end
 
   def create
