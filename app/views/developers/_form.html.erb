@@ -1,6 +1,6 @@
 <main>
   <div class="container">
-    <h2>Планшет</h2>
+    <h2>Разработчик</h2>
     <%= form_for @developer do |f| %>
     <% if @developer.errors.any? %>
       <div id="error_explanation">
@@ -15,26 +15,43 @@
         </ul>
       </div>
     <% end %>
-      <div class="device-form">
-        <p>
-          <%= f.label :name %><br>
+      <section class="device-form">
+        <figure>
+          <%= f.label :name, "Название" %>
           <%= f.text_field :name %>
-        </p>
-        <p>
-          <%= f.label :description %><br>
-          <%= f.text_field :description %>
-        </p>
-        <p>
-          <%= f.label :devices %><br>
-          <%= f.text_field :devices %>
-        </p>
-        <p>
-          <%= f.submit(class: "button", value: "Обновить") %>
-        </p>
-        <p>
-          <%= link_to "Назад", developers_path, class: "button" %>
-        </p>
-      </div>
+        </figure>
+        <figure>
+          <%= f.label :founded, "Основана" %>
+          <%= f.text_field :founded %>
+        </figure>
+        <figure>
+          <%= f.label :founders, "Основатели" %>
+          <%= f.text_field :founders %>
+        </figure>
+        <figure>
+          <%= f.label :description, "Описание" %>
+          <%= f.text_area :description %>
+        </figure>
+        <figure>
+          <p>Устройства:</p>
+          <select>
+            <% @phones.each do |phone| %>
+              <option><%= phone.model %></option>
+            <% end %>
+            <% @tablets.each do |tablet| %>
+              <option><%= tablet.model %></option>
+            <% end %>
+            <% @watches.each do |watch| %>
+              <option><%= watch.model %></option>
+            <% end %>
+            <% @transformers.each do |transformer| %>
+              <option><%= transformer.model %></option>
+            <% end %>
+          </select>
+        </figure>
+        <%= f.submit(class: "button", value: "Обновить") %>
+        <%= link_to "Назад", developers_path, class: "button" %>
+      </section>
     <% end %>
   </div>
 </main>

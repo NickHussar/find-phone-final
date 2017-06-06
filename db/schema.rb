@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170530195516) do
+ActiveRecord::Schema.define(version: 20170604164646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,8 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.text     "devices"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "founded"
+    t.string   "founders"
   end
 
   create_table "phones", force: :cascade do |t|
@@ -54,7 +56,6 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.boolean  "nfc"
     t.boolean  "gyroscope"
     t.boolean  "accelerometer"
-    t.boolean  "barometer"
     t.boolean  "wireless_charge"
     t.boolean  "fast_charge"
     t.boolean  "type_c"
@@ -72,6 +73,17 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.datetime "updated_at",                               null: false
     t.integer  "m_year"
     t.integer  "developer_id"
+    t.boolean  "glonass"
+    t.string   "sim"
+    t.string   "disp_protect"
+    t.boolean  "card"
+    t.integer  "card_max"
+    t.boolean  "light_sensor"
+    t.boolean  "compass"
+    t.boolean  "proximity"
+    t.boolean  "autofocus"
+    t.decimal  "diaphragm",        precision: 3, scale: 1
+    t.boolean  "jack"
     t.index ["developer_id"], name: "index_phones_on_developer_id", using: :btree
   end
 
@@ -107,7 +119,6 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.boolean  "nfc"
     t.boolean  "gyroscope"
     t.boolean  "accelerometer"
-    t.boolean  "barometer"
     t.boolean  "wireless_charge"
     t.boolean  "fast_charge"
     t.boolean  "type_c"
@@ -124,6 +135,17 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.datetime "updated_at",                               null: false
     t.integer  "m_year"
     t.integer  "developer_id"
+    t.boolean  "glonass"
+    t.string   "sim"
+    t.string   "disp_protect"
+    t.boolean  "card"
+    t.integer  "card_max"
+    t.boolean  "light_sensor"
+    t.boolean  "compass"
+    t.boolean  "proximity"
+    t.boolean  "autofocus"
+    t.decimal  "diaphragm",        precision: 3, scale: 1
+    t.boolean  "jack"
     t.index ["developer_id"], name: "index_tablets_on_developer_id", using: :btree
   end
 
@@ -142,20 +164,10 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.string   "gpu"
     t.integer  "inner_mem"
     t.integer  "ram"
-    t.string   "cam"
-    t.decimal  "megapixels",      precision: 3, scale: 1
-    t.integer  "photo_res_x"
-    t.integer  "photo_res_y"
-    t.boolean  "hdr"
-    t.integer  "video_res_x"
-    t.integer  "video_res_y"
-    t.integer  "fps"
     t.string   "wifi"
     t.string   "bluetooth"
-    t.boolean  "nfc"
     t.boolean  "gyroscope"
     t.boolean  "accelerometer"
-    t.boolean  "barometer"
     t.boolean  "wireless_charge"
     t.boolean  "fast_charge"
     t.boolean  "stylus"
@@ -173,6 +185,13 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.datetime "updated_at",                              null: false
     t.integer  "m_year"
     t.integer  "developer_id"
+    t.boolean  "glonass"
+    t.string   "disp_protect"
+    t.boolean  "card"
+    t.integer  "card_max"
+    t.boolean  "light_sensor"
+    t.boolean  "compass"
+    t.boolean  "jack"
     t.index ["developer_id"], name: "index_transformers_on_developer_id", using: :btree
   end
 
@@ -193,15 +212,6 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.string   "gpu"
     t.integer  "inner_mem"
     t.integer  "ram"
-    t.boolean  "cam"
-    t.decimal  "megapixels",      precision: 3, scale: 1
-    t.integer  "photo_res_x"
-    t.integer  "photo_res_y"
-    t.boolean  "autofocus"
-    t.boolean  "video_rec"
-    t.integer  "video_res_x"
-    t.integer  "video_res_y"
-    t.integer  "fps"
     t.boolean  "finder"
     t.boolean  "phone"
     t.boolean  "e_mail"
@@ -238,6 +248,9 @@ ActiveRecord::Schema.define(version: 20170530195516) do
     t.datetime "updated_at",                              null: false
     t.integer  "m_year"
     t.integer  "developer_id"
+    t.string   "disp_protect"
+    t.boolean  "glonass"
+    t.boolean  "light_sensor"
     t.index ["developer_id"], name: "index_watches_on_developer_id", using: :btree
   end
 

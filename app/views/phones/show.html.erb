@@ -1,8 +1,7 @@
-<main class="main">
+<main>
   <div class="container">
     <%= link_to phones_path do %><h2>Телефоны<% end %> > <%= @phone.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Смартфон <%= @phone.model %></h1>
       <div class="img-box">
         <%= link_to (image_path 'phones/'+@phone.model+'_full'), 'data-fancybox' => 'gallery' do %>
           <% image_tag 'phones/'+@phone.model %>
@@ -11,11 +10,12 @@
         <% end %>
       </div>
       <div class="main-specs">
+        <h1 class="gadget-caption">Смартфон <%= @developer.name %> <%= @phone.model %></h1>
         <table class="specs">
           <caption>Основные характеристики:</caption>
           <tr>
             <td>Производитель:</td>
-            <td><%= @phone.developer_id %></td>
+            <td><%= @developer.name %></td>
           </tr>
           <tr>
             <td>Модель:</td>
@@ -37,164 +37,194 @@
         <%= link_to 'Редактировать', edit_phone_path(@phone), class: "button" %>
         <%= link_to 'Удалить', phone_path(@phone), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
-    </section>
-      <table class="specs">
-        <caption>Все характеристики:</caption>
-        <tr>
-          <td class="sub-heading">Описание:</td>
-        </tr>
-        <tr>
-          <td colspan="4"><%= @phone.description %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Экран:</td>
-        </tr>
-        <tr>
-          <td>Разрешение экрана:</td>
-          <td><%= @phone.resolution_x %> x <%= @phone.resolution_y %> px</td>
-          <td>Диагональ экрана (дюймы):</td>
-          <td><%= @phone.diagonal %></td>
-        </tr>
-        <tr>
-          <td>Тип экрана:</td>
-          <td><%= @phone.screen_type %></td>
-          <td>DPI (точек на дюйм):</td>
-          <td><%= @phone.dpi %> ppi</td>
-        </tr>
-        <tr>
-          <td>Мультитач (одновременных касаний):</td>
-          <td><%= @phone.multitouch %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Процессор:</td>
-        </tr>
-        <tr>
-          <td>CPU:</td>
-          <td><%= @phone.cpu %></td>
-          <td>Количество ядер:</td>
-          <td><%= @phone.cores %></td>
-        </tr>
-        <tr>
-          <td>Частота ядер процессора:</td>
-          <td><%= @phone.frequency %> GHz</td>
-          <td>GPU:</td>
-          <td><%= @phone.gpu %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Память:</td>
-        </tr>
-        <tr>
-          <td>Внутренняя память:</td>
-          <td><%= @phone.inner_mem %> GB</td>
-          <td>Оперативная память:</td>
-          <td><%= @phone.ram %> GB</td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Камера:</td>
-        </tr>
-        <tr>
-          <td>Модуль камеры:</td>
-          <td><%= @phone.cam %></td>
-          <td>Количество мегапикселей:</td>
-          <td><%= @phone.megapixels %> MP</td>
-        </tr>
-        <tr>
-          <td>Разрешение фотографий:</td>
-          <td><%= @phone.photo_res_x %> x <%= @phone.photo_res_y %> px</td>
-          <td>Разрешение видео:</td>
-          <td><%= @phone.video_res_x %> x <%= @phone.video_res_y %> px</td>
-        </tr>
-        <tr>
-          <td>FPS (Кадров в секунду):</td>
-          <td><%= @phone.fps %></td>
-          <td>HDR:</td>
-          <td><%= @phone.hdr %></td>
-        </tr>
-        <tr>
-          <td>Количество мегапикселей фронт. камеры:</td>
-          <td><%= @phone.front_megapixels %> MP</td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Беспроводные интерфейсы:</td>
-        </tr>
-        <tr>
-          <td>3G:</td>
-        </tr>
-        <tr>
-          <td colspan="4" style="color: #009688"><%= @phone.three_g %></td>
-        </tr>
-        <tr>
-        <tr>
-          <td>4G:</td>
-        </tr>
-          <td colspan="4" style="color: #009688"><%= @phone.four_g %></td>
-        </tr>
-        <tr>
-          <td>WiFi:</td>
-          <td><%= @phone.wifi %></td>
-          <td>Bluetooth:</td>
-          <td><%= @phone.bluetooth %></td>
-        </tr>
-        <tr>
-          <td>NFC:</td>
-          <td><%= @phone.nfc %></td>
-          <td>Беспроводная зарядка:</td>
-          <td><%= @phone.wireless_charge %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Датчики:</td>
-        </tr>
-        <tr>
-          <td>Гироскоп:</td>
-          <td><%= @phone.gyroscope %></td>
-          <td>Акселерометр:</td>
-          <td><%= @phone.accelerometer %></td>
-        </tr>
-        <tr>
-          <td>Барометр:</td>
-          <td><%= @phone.barometer %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Время работы:</td>
-        </tr>
-        <tr>
-          <td>Время работы в режиме ожидания:</td>
-          <td><%= @phone.standby_time %> ч.</td>
-          <td>Время работы в режиме разговора:</td>
-          <td><%= @phone.talk_time %> ч.</td>
-        </tr>
-          <td>Батарея:</td>
-          <td><%= @phone.battery %> mAh</td>
-        <tr>
-        </tr>
-        <tr>
-          <td class="sub-heading">Прочее:</td>
-        </tr>
-        <tr>
-          <td>Быстрая зарядка:</td>
-          <td><%= @phone.fast_charge %></td>
-          <td>Разъем USB 3.0 Type-C:</td>
-          <td><%= @phone.type_c %></td>
-        </tr>
-        <tr>
-          <td>VR (виртуальная реальность):</td>
-          <td><%= @phone.vr %></td>
-          <td>Цвета:</td>
-          <td><%= @phone.color %></td>
-        </tr>
-        <tr>
-          <td>Вес:</td>
-          <td><%= @phone.weight %> гр.</td>
-          <td>Размеры (ДxШxВ):</td>
-          <td><%= @phone.dimensions %></td>
-        </tr>
-        <tr>
-          <td>Материал корпуса:</td>
-          <td><%= @phone.material %></td>
-          <td>Степень защиты:</td>
-          <td><%= @phone.protection %></td>
-        </tr>
-      </table>
-    </div>
+    </caption>
+    <table class="specs">
+      <caption>Все характеристики:</caption>
+      <tr>
+        <td class="sub-heading">Описание:</td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= @phone.description %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Дисплей:</td>
+      </tr>
+      <tr>
+        <td>Разрешение экрана:</td>
+        <td><%= @phone.resolution_x %> x <%= @phone.resolution_y %> px</td>
+        <td>Диагональ экрана (дюймы):</td>
+        <td><%= @phone.diagonal %></td>
+      </tr>
+      <tr>
+        <td>Тип экрана:</td>
+        <td><%= @phone.screen_type %></td>
+        <td>DPI (точек на дюйм):</td>
+        <td><%= @phone.dpi %> ppi</td>
+      </tr>
+      <tr>
+        <td>Мультитач (одновременных касаний):</td>
+        <td><%= @phone.multitouch %></td>
+        <td>Защитное стекло:</td>
+        <td><%= @phone.disp_protect %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Процессор:</td>
+      </tr>
+      <tr>
+        <td>CPU:</td>
+        <td><%= @phone.cpu %></td>
+        <td>Количество ядер:</td>
+        <td><%= @phone.cores %></td>
+      </tr>
+      <tr>
+        <td>Частота ядер процессора:</td>
+        <td><%= @phone.frequency %> GHz</td>
+        <td>GPU:</td>
+        <td><%= @phone.gpu %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Память:</td>
+      </tr>
+      <tr>
+        <td>Внутренняя память:</td>
+        <td><%= @phone.inner_mem %> GB</td>
+        <td>Оперативная память:</td>
+        <td><%= @phone.ram %> GB</td>
+      </tr>
+      <tr>
+        <td>Поддержка карт памяти:</td>
+        <td><%= @phone.card %></td>
+        <td>Максимальный объем карт памяти (GB):</td>
+        <td><%= @phone.card_max %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Камера:</td>
+      </tr>
+      <tr>
+        <td>Модуль камеры:</td>
+        <td><%= @phone.cam %></td>
+        <td>Количество мегапикселей:</td>
+        <td><%= @phone.megapixels %> MP</td>
+      </tr>
+      <tr>
+        <td>Разрешение фотографий:</td>
+        <td><%= @phone.photo_res_x %> x <%= @phone.photo_res_y %> px</td>
+        <td>Разрешение видео:</td>
+        <td><%= @phone.video_res_x %> x <%= @phone.video_res_y %> px</td>
+      </tr>
+      <tr>
+        <td>FPS (Кадров в секунду):</td>
+        <td><%= @phone.fps %></td>
+        <td>HDR:</td>
+        <td><%= @phone.hdr %></td>
+      </tr>
+      <tr>
+        <td>Автофокус:</td>
+        <td><%= @phone.autofocus %></td>
+        <td>Диафрагма (f/):</td>
+        <td><%= @phone.diaphragm %></td>
+      </tr>
+      <tr>
+        <td>Количество мегапикселей фронт. камеры:</td>
+        <td><%= @phone.front_megapixels %> MP</td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Беспроводные интерфейсы:</td>
+      </tr>
+      <tr>
+        <td>3G:</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="color: #009688"><%= @phone.three_g %></td>
+      </tr>
+      <tr>
+        <td>4G:</td>
+      </tr>
+      <tr>
+        <td colspan="4" style="color: #009688"><%= @phone.four_g %></td>
+      </tr>
+      <tr>
+        <td>WiFi:</td>
+        <td><%= @phone.wifi %></td>
+        <td>Bluetooth:</td>
+        <td><%= @phone.bluetooth %></td>
+      </tr>
+      <tr>
+        <td>NFC:</td>
+        <td><%= @phone.nfc %></td>
+        <td>Беспроводная зарядка:</td>
+        <td><%= @phone.wireless_charge %></td>
+      </tr>
+      <tr>
+        <td>GLONASS:</td>
+        <td><%= @phone.glonass %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Датчики:</td>
+      </tr>
+      <tr>
+        <td>Гироскоп:</td>
+        <td><%= @phone.gyroscope %></td>
+        <td>Акселерометр:</td>
+        <td><%= @phone.accelerometer %></td>
+      </tr>
+      <tr>
+        <td>Датчик освещенности:</td>
+        <td><%= @phone.light_sensor %></td>
+        <td>Датчик приближения:</td>
+        <td><%= @phone.proximity %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Время работы:</td>
+      </tr>
+      <tr>
+        <td>Время работы в режиме ожидания:</td>
+        <td><%= @phone.standby_time %> ч.</td>
+        <td>Время работы в режиме разговора:</td>
+        <td><%= @phone.talk_time %> ч.</td>
+      </tr>
+        <td>Батарея:</td>
+        <td><%= @phone.battery %> mAh</td>
+      <tr>
+      </tr>
+      <tr>
+        <td class="sub-heading">Прочее:</td>
+      </tr>
+      <tr>
+        <td>Быстрая зарядка:</td>
+        <td><%= @phone.fast_charge %></td>
+        <td>Разъем USB 3.0 Type-C:</td>
+        <td><%= @phone.type_c %></td>
+      </tr>
+      <tr>
+        <td>VR (виртуальная реальность):</td>
+        <td><%= @phone.vr %></td>
+        <td>Цвета:</td>
+        <td><%= @phone.color %></td>
+      </tr>
+      <tr>
+        <td>Вес:</td>
+        <td><%= @phone.weight %> гр.</td>
+        <td>Размеры (ДxШxВ):</td>
+        <td><%= @phone.dimensions %></td>
+      </tr>
+      <tr>
+        <td>Материал корпуса:</td>
+        <td><%= @phone.material %></td>
+        <td>Степень защиты:</td>
+        <td><%= @phone.protection %></td>
+      </tr>
+      <tr>
+        <td>Формат SIM:</td>
+        <td><%= @phone.sim %></td>
+        <td>Разъем 3.5 мм:</td>
+        <td><%= @phone.jack %></td>
+      </tr>
+      <tr>
+        <td>ГЛОНАСС:</td>
+        <td><%= @phone.glonass %></td>
+      </tr>
+    </table>
+  </div>
   <%= render 'layouts/footer' %>
 </main>

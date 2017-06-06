@@ -45,7 +45,8 @@ h2 {
   color: #FF9100;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  font-size: 15pt;
+  font-size: 13pt;
+  margin: 5px 0;
 }
 
 h3 {
@@ -72,6 +73,7 @@ aside {
   color: #FAFAFA;
   padding-left: 20px;
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  z-index: 10;
 }
 
 aside a {
@@ -119,7 +121,7 @@ main .container {
 }
 
 main .line {
-  margin-top: 10px;
+  margin: 15px 0px;
 }
 
 main .line div {
@@ -128,23 +130,22 @@ main .line div {
   flex-wrap: nowrap;
   justify-content: flex-start;
   align-items: center;
-  margin-top: 10px;
 }
 
 main .line div article {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 20px;
   background-color: #FAFAFA;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   margin-right: 15px;
   color: #009688;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  font-size: 14pt;
-  min-height: 200px;
+  font-size: 12pt;
+  min-height: 230px;
   min-width: 100px;
 }
 
@@ -161,17 +162,16 @@ main .container .gadget-head {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: flex-end;
+  margin-top: 15px;
 }
 
 main .container .gadget-head .gadget-caption {
-  width: 100%;
-  margin: 10px 0;
   font-size: 18pt;
   color: #009688;
 }
 
 main .container .gadget-head .img-box {
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   padding: 20px;
 }
 
@@ -181,7 +181,7 @@ main .container .gadget-head .img-box a{
 }
 
 main .container .gadget-head .main-specs {
-  margin: 0 15px;
+  margin: 0 20px;
 }
 
 main .container .gadget-head .edit-buttons {
@@ -192,26 +192,30 @@ main .container .gadget-head .edit-buttons {
 main .container .specs {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
+  font-size: 11pt;
   color: #9E9E9E;
   width: 100%;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   padding: 20px;
 }
 
 main .container table caption {
-  font-size: 15pt;
-  margin: 20px 0;
+  font-size: 12pt;
+  margin: 15px 0 15px 0;
   text-align: left;
 }
 
 main .container table tr .sub-heading {
   color: #FF9100;
-  padding: 15px 0 10px 0;
+  padding: 5px 0;
+}
+
+main .container table tr td:nth-child(1n) {
+  padding: 4px;
 }
 
 main .container table tr td:nth-child(2n) {
   text-align: left;
-  padding: 6px;
   color: #009688;
 }
 
@@ -224,19 +228,71 @@ main form .device-form {
   margin: 20px 0;
   color: #009688;
   font-family: 'Roboto', sans-serif;
+  font-size: 10pt;
   font-weight: 400;
 }
 
-main form .device-form input[type="text"] {
-  border: none;
-  border-bottom: 2px solid #FF9100;
-  background: none;
-  color: #9A9A9A;
+main form .device-form figure {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
-  padding: 5px;
-  margin: 10px;
+  margin: 5px 30px 5px 0;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  width: 350px;
+}
+
+main form .device-form figure select {
+  color: #9A9A9A;
+  padding: 2px;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid #FF9100;
+  background: none;
   outline: none;
+}
+
+main form .device-form figure select option {
+  color: #9A9A9A;
+  padding: 2px;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid #FF9100;
+  background: none;
+  outline: none;
+}
+
+main form .device-form figure input[type="text"] {
+  border: none;
+  border-bottom: 1px solid #9A9A9A;
+  background: none;
+  color: #9A9A9A;
+  outline: none;
+  padding: 2px;
+  width: 150px;
+  transition-duration: 0.2s;
+}
+
+main form .device-form figure textarea {
+  background: none;
+  border: none;
+  color: #9A9A9A;
+  outline: none;
+  border-left: 1px solid #9A9A9A;
+  resize: none;
+  width: 260px;
+  height: 100px;
+  padding: 2px 5px;
+  transition-duration: 0.2s;
+}
+
+main form .device-form figure textarea:focus {
+  border-left: 1px solid #FF9100;
+}
+
+main form .device-form figure input:focus {
+  border-bottom: 1px solid #FF9100;
 }
 
 main .button {
@@ -278,5 +334,5 @@ footer {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 11pt;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
 }

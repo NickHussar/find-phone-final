@@ -38,198 +38,162 @@
         <%= link_to 'Удалить', watch_path(@watch), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
     </section>
-      <table class="specs">
-        <caption>Все характеристики:</caption>
-        <tr>
-          <td class="sub-heading">Описание:</td>
-        </tr>
-        <tr>
-          <td colspan="4"><%= @watch.description %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Экран:</td>
-        </tr>
-        <tr>
-          <td>Разрешение экрана:</td>
-          <td><%= @watch.resolution_x %> x <%= @watch.resolution_y %> px</td>
-          <td>Диагональ экрана (дюймы):</td>
-          <td><%= @watch.diagonal %></td>
-        </tr>
-        <tr>
-          <td>Тип экрана:</td>
-          <td><%= @watch.screen_type %></td>
-          <td>DPI (точек на дюйм):</td>
-          <td><%= @watch.dpi %> ppi</td>
-        </tr>
-        <tr>
-          <td>Сенсорный экран:</td>
-          <td><%= @watch.touchscreen %></td>
-          <td>Мультитач (одновременных касаний):</td>
-          <td><%= @watch.multitouch %></td>
-        </tr>
-        <tr>
-          <td>Цветной экран:</td>
-          <td><%= @watch.color_screen %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Процессор:</td>
-        </tr>
-        <tr>
-          <td>CPU:</td>
-          <td><%= @watch.cpu %></td>
-          <td>Количество ядер:</td>
-          <td><%= @watch.cores %></td>
-        </tr>
-        <tr>
-          <td>Частота ядер процессора:</td>
-          <td><%= @watch.frequency %> GHz</td>
-          <td>GPU:</td>
-          <td><%= @watch.gpu %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Память:</td>
-        </tr>
-        <tr>
-          <td>Внутренняя память:</td>
-          <td><%= @watch.inner_mem %> GB</td>
-          <td>Оперативная память:</td>
-          <td><%= @watch.ram %> GB</td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Камера:</td>
-        </tr>
-        <tr>
-          <td>Модуль камеры:</td>
-          <td><%= @watch.cam %></td>
-          <td>Количество мегапикселей:</td>
-          <td><%= @watch.megapixels %> MP</td>
-        </tr>
-        <tr>
-          <td>Автофокус:</td>
-          <td><%= @watch.autofocus %></td>
-          <td>Разрешение фотографий:</td>
-          <td><%= @watch.photo_res_x %> x <%= @watch.photo_res_y %> px</td>
-        </tr>
-
-        <tr>
-          <td>Запись видео:</td>
-          <td><%= @watch.video_rec %></td>
-          <td>Разрешение видео:</td>
-          <td><%= @watch.video_res_x %> x <%= @watch.video_res_y %> px</td>
-        </tr>
-        <tr>
-          <td>FPS (Кадров в секунду):</td>
-          <td><%= @watch.fps %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Беспроводные интерфейсы:</td>
-        </tr>
-        <tr>
-          <td>WiFi:</td>
-          <td><%= @watch.wifi %></td>
-          <td>Bluetooth:</td>
-          <td><%= @watch.bluetooth %></td>
-        </tr>
-        <tr>
-          <td>NFC:</td>
-          <td><%= @watch.nfc %></td>
-          <td>Беспроводная зарядка:</td>
-          <td><%= @watch.wireless_charge %></td>
-        </tr>
-        <tr>
-          <td>GPS:</td>
-          <td><%= @watch.gps %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Датчики:</td>
-        </tr>
-        <tr>
-          <td>Гироскоп:</td>
-          <td><%= @watch.gyroscope %></td>
-          <td>Акселерометр:</td>
-          <td><%= @watch.accelerometer %></td>
-        </tr>
-        <tr>
-          <td>Барометр:</td>
-          <td><%= @watch.barometer %></td>
-          <td>Термометр:</td>
-          <td><%= @watch.thermometer %></td>
-        </tr>
-        <tr>
-          <td>Компас:</td>
-          <td><%= @watch.compass %></td>
-          <td>Хронограф:</td>
-          <td><%= @watch.chronograph %></td>
-        </tr>
-        <tr>
-          <td>Шагомер:</td>
-          <td><%= @watch.pedometer %></td>
-          <td>Датчик пульса:</td>
-          <td><%= @watch.pulse_sensor %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Время работы:</td>
-        </tr>
-        <tr>
-          <td>Время работы в режиме ожидания:</td>
-          <td><%= @watch.standby_time %> ч.</td>
-          <td>Время работы в режиме часов:</td>
-          <td><%= @watch.clock_time %> ч.</td>
-        </tr>
-          <td>Батарея:</td>
-          <td><%= @watch.battery %> mAh</td>
-        <tr>
-        </tr>
-        <tr>
-          <td class="sub-heading">Прочее:</td>
-        </tr>
-        <tr>
-          <td>Быстрая зарядка:</td>
-          <td><%= @watch.fast_charge %></td>
-          <td>Разъем USB 3.0 Type-C:</td>
-          <td><%= @watch.type_c %></td>
-        </tr>
-        <tr>
-          <td>Поиск телефона:</td>
-          <td><%= @watch.finder %></td>
-          <td>Цвета:</td>
-          <td><%= @watch.color %></td>
-        </tr>
-        <tr>
-          <td>Вес:</td>
-          <td><%= @watch.weight %> гр.</td>
-          <td>Размеры (ДxШxВ):</td>
-          <td><%= @watch.dimensions %></td>
-        </tr>
-        <tr>
-          <td>Материал корпуса:</td>
-          <td><%= @watch.material %></td>
-          <td>Степень защиты:</td>
-          <td><%= @watch.protection %></td>
-        </tr>
-        <tr>
-          <td>Звонки:</td>
-          <td><%= @watch.phone %></td>
-          <td>Электронная почта:</td>
-          <td><%= @watch.e_mail %></td>
-        </tr>
-        <tr>
-          <td>Онлайн-сервис:</td>
-          <td><%= @watch.online_service %></td>
-          <td>Совместимость:</td>
-          <td><%= @watch.compatibility %></td>
-        </tr>
-        <tr>
-          <td>Микрофон:</td>
-          <td><%= @watch.mic %></td>
-          <td>Динамик:</td>
-          <td><%= @watch.speaker %></td>
-        </tr>
-        <tr>
-          <td>Фитнесс-трекер:</td>
-          <td><%= @watch.fitness_tracker %></td>
-        </tr>
-      </table>
-    </div>
+    <table class="specs">
+      <caption>Все характеристики:</caption>
+      <tr>
+        <td class="sub-heading">Описание:</td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= @transformer.description %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Дисплей:</td>
+      </tr>
+      <tr>
+        <td>Разрешение экрана:</td>
+        <td><%= @transformer.resolution_x %> x <%= @transformer.resolution_y %> px</td>
+        <td>Диагональ экрана (дюймы):</td>
+        <td><%= @transformer.diagonal %></td>
+      </tr>
+      <tr>
+        <td>Тип экрана:</td>
+        <td><%= @transformer.screen_type %></td>
+        <td>DPI (точек на дюйм):</td>
+        <td><%= @transformer.dpi %> ppi</td>
+      </tr>
+      <tr>
+        <td>Мультитач (одновременных касаний):</td>
+        <td><%= @transformer.multitouch %></td>
+        <td>Защитное стекло:</td>
+        <td><%= @transformer.disp_protect %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Процессор:</td>
+      </tr>
+      <tr>
+        <td>CPU:</td>
+        <td><%= @transformer.cpu %></td>
+        <td>Количество ядер:</td>
+        <td><%= @transformer.cores %></td>
+      </tr>
+      <tr>
+        <td>Частота ядер процессора:</td>
+        <td><%= @transformer.frequency %> GHz</td>
+        <td>GPU:</td>
+        <td><%= @transformer.gpu %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Память:</td>
+      </tr>
+      <tr>
+        <td>Внутренняя память:</td>
+        <td><%= @transformer.inner_mem %> GB</td>
+        <td>Оперативная память:</td>
+        <td><%= @transformer.ram %> GB</td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Беспроводные интерфейсы:</td>
+      </tr>
+      <tr>
+        <td>WiFi:</td>
+        <td><%= @transformer.wifi %></td>
+        <td>Bluetooth:</td>
+        <td><%= @transformer.bluetooth %></td>
+      </tr>
+      <tr>
+        <td>GLONASS:</td>
+        <td><%= @transformer.glonass %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Датчики:</td>
+      </tr>
+      <tr>
+        <td>Гироскоп:</td>
+        <td><%= @transformer.gyroscope %></td>
+        <td>Акселерометр:</td>
+        <td><%= @transformer.accelerometer %></td>
+      </tr>
+      <tr>
+        <td>Барометр:</td>
+        <td><%= @transformer.barometer %></td>
+        <td>Термометр:</td>
+        <td><%= @transformer.thermometer %></td>
+      </tr>
+      <tr>
+        <td>Компас:</td>
+        <td><%= @transformer.compass %></td>
+        <td>Хронограф:</td>
+        <td><%= @transformer.chronograph %></td>
+      </tr>
+      <tr>
+        <td>Шагомер:</td>
+        <td><%= @transformer.pedometer %></td>
+        <td>Датчик пульса:</td>
+        <td><%= @transformer.pulse_sensor %></td>
+      </tr>
+      <tr>
+        <td>Датчик освещенности:</td>
+        <td><%= @transformer.light_sensor %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Время работы:</td>
+      </tr>
+      <tr>
+        <td>Время работы в режиме ожидания:</td>
+        <td><%= @transformer.standby_time %> ч.</td>
+        <td>Время работы в режиме часов:</td>
+        <td><%= @transformer.clock_time %> ч.</td>
+      </tr>
+      <tr>
+        <td>Батарея:</td>
+        <td><%= @transformer.battery %> mAh</td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Прочее:</td>
+      </tr>
+      <tr>
+        <td>Быстрая зарядка:</td>
+        <td><%= @transformer.fast_charge %></td>
+        <td>Фитнес-трекер:</td>
+        <td><%= @transformer.fitness_tracker %></td>
+      </tr>
+      <tr>
+        <td>Беспроводная зарядка:</td>
+        <td><%= @transformer.wireless_charge %></td>
+        <td>Цвета:</td>
+        <td><%= @transformer.color %></td>
+      </tr>
+      <tr>
+        <td>Вес:</td>
+        <td><%= @transformer.weight %> гр.</td>
+        <td>Размеры (ДxШxВ):</td>
+        <td><%= @transformer.dimensions %></td>
+      </tr>
+      <tr>
+        <td>Материал корпуса:</td>
+        <td><%= @transformer.material %></td>
+        <td>Степень защиты:</td>
+        <td><%= @transformer.protection %></td>
+      </tr>
+      <tr>
+        <td>Разъем 3.5 мм Jack:</td>
+        <td><%= @transformer.jack %></td>
+        <td>Разъем USB Type-C:</td>
+        <td><%= @transformer.type_c %></td>
+      </tr>
+      <tr>
+        <td>Онлайн-сервис:</td>
+        <td><%= @transformer.online_service %></td>
+        <td>Совместимость:</td>
+        <td><%= @transformer.compatibility %></td>
+      </tr>
+      <tr>
+        <td>Микрофон:</td>
+        <td><%= @transformer.mic %></td>
+        <td>Динамик:</td>
+        <td><%= @transformer.speaker %></td>
+      </tr>
+    </table>
+  </div>
   <%= render 'layouts/footer' %>
 </main>

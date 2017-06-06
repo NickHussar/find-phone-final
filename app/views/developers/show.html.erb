@@ -1,20 +1,21 @@
-<main class="main">
+<main>
   <div class="container">
     <%= link_to developers_path do %><h2>Разработчики<% end %> > <%= @developer.name %></h2>
-    <div class="gadget-head">
+    <section class="gadget-head">
       <div class="img-box">
-        <%= image_tag 'developers/'+@developer.name %>
+          <%= image_tag 'developers/'+@developer.name %>
       </div>
-      <div>
-        <h1 style="color: #009688"><%= @developer.name %></h1>
+      <div class="main-specs">
+        <h1 class="gadget-caption"><%= @developer.name %></h1>
         <table class="specs">
+          <caption>Основная информация:</caption>
           <tr>
-            <td>Описание:</td>
-            <td><%= @developer.description %></td>
+            <td>Год основания:</td>
+            <td><%= @developer.founded %></td>
           </tr>
           <tr>
-            <td>Устройства:</td>
-            <td><%= @developer.devices %></td>
+            <td>Основатели:</td>
+            <td><%= @developer.founders %></td>
           </tr>
         </table>
       </div>
@@ -22,7 +23,68 @@
         <%= link_to 'Редактировать', edit_developer_path(@developer), class: "button" %>
         <%= link_to 'Удалить', developer_path(@developer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
+    </section>
+    <table class="specs">
+      <caption>Дополнительная информация:</caption>
+      <tr>
+        <td class="sub-heading">Описание:</td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= @developer.description %></td>
+      </tr>
+    </table>
+    <h2>Телефоны:</h2>
+    <section class="line">
+      <div>
+        <% @phones.each do |phone| %>
+          <%= link_to phone_path(phone) do %>
+            <article>
+              <%= image_tag 'phones/'+phone.model, alt: phone.model %>
+              <p><%= @developer.name %> <%= phone.model %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+    <h2>Планшеты:</h2>
+    <section class="line">
+      <div>
+        <% @tablets.each do |tablet| %>
+          <%= link_to tablet_path(tablet) do %>
+            <article>
+              <%= image_tag 'tablets/'+tablet.model, alt: tablet.model %>
+              <p><%= @developer.name %> <%= tablet.model %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+    <h2>Трансформеры:</h2>
+    <section class="line">
+      <div>
+        <% @transformers.each do |transformer| %>
+          <%= link_to transformer_path(transformer) do %>
+            <article>
+              <%= image_tag 'transformers/'+transformer.model, alt: transformer.model %>
+              <p><%= @developer.name %> <%= transformer.model %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
+    <h2>Телефоны:</h2>
+    <section class="line">
+      <div>
+        <% @watches.each do |watch| %>
+          <%= link_to watch_path(watch) do %>
+            <article>
+              <%= image_tag 'watches/'+watch.model, alt: watch.model %>
+              <p><%= @developer.name %> <%= watch.model %></p>
+            </article>
+          <% end %>
+        <% end %>
+      </div>
+    </section>
     </div>
-  </div>
   <%= render 'layouts/footer' %>
 </main>

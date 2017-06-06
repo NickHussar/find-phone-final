@@ -30,8 +30,8 @@
     <p class="bottom-heading">Больше интересных гаджетов ниже</p>
   </header>
   <div class="container">
+    <h2>Телефоны</h2>
     <section class="line">
-      <h2>Телефоны</h2>
       <div>
         <% @phones.each do |phone| %>
           <%= link_to phones_path(phone) do %>
@@ -43,8 +43,8 @@
         <% end %>
       </div>
     </section>
+    <h2>Планшеты</h2>
     <section class="line">
-      <h2>Планшеты</h2>
       <div>
         <% @tablets.each do |tablet| %>
           <%= link_to tablets_path(tablet) do %>
@@ -56,8 +56,8 @@
         <% end %>
       </div>
     </section>
+    <h2>Трансформеры</h2>
     <section class="line">
-      <h2>Трансформеры</h2>
       <div>
         <% @transformers.each do |transformer| %>
           <%= link_to transformers_path(transformer) do %>
@@ -69,8 +69,8 @@
         <% end %>
       </div>
     </section>
+    <h2>Умные часы</h2>
     <section class="line">
-      <h2>Умные часы</h2>
       <div>
         <% @watches.each do |watch| %>
           <%= link_to watches_path(watch) do %>

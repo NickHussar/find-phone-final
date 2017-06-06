@@ -8,24 +8,22 @@ class WatchesController < ApplicationController
 
   def show
     @watch = Watch.find(params[:id])
+    @developer = Developer.find(params[:id])
   end
 
   def new
     @watch = Watch.new
     @developers = Developer.all
-    @developer = Developer.find(params[:id])
   end
 
   def edit
     @watch = Watch.find(params[:id])
     @developers = Developer.all
-    @developer = Developer.find(params[:id])
   end
 
   def create
     @watch = Watch.new(watch_params)
     @developers = Developer.all
-    @developer = Developer.find(params[:id])
 
     if @watch.save
       redirect_to @watch
@@ -37,7 +35,6 @@ class WatchesController < ApplicationController
   def update
     @watch = Watch.find(params[:id])
     @developers = Developer.all
-    @developer = Developer.find(params[:id])
 
     if @watch.update(watch_params)
       redirect_to @watch
@@ -55,6 +52,6 @@ class WatchesController < ApplicationController
 
   private
     def watch_params
-      params.require(:watch).permit(:model, :description, :m_year, :resolution_x, :resolution_y, :diagonal, :screen_type, :color_screen, :dpi, :touchscreen, :multitouch, :cpu, :cores, :frequency, :gpu, :inner_mem, :ram, :cam, :megapixels, :photo_res_x, :photo_res_y, :autofocus, :video_rec, :video_res_x, :video_res_y, :fps, :finder, :phone, :e_mail, :wifi, :bluetooth, :nfc, :gyroscope, :accelerometer, :barometer, :thermometer, :compass, :chronograph, :pedometer, :pulse_sensor, :fitness_tracker, :wireless_charge, :fast_charge, :type_c, :vr, :battery, :standby_time, :clock_time, :os, :online_service, :compatibility, :speaker, :mic, :color, :weight, :dimensions, :material, :protection)
+      params.require(:watch).permit(:model, :description, :m_year, :resolution_x, :resolution_y, :diagonal, :screen_type, :dpi, :multitouch, :cpu, :cores, :frequency, :gpu, :inner_mem, :ram, :cam, :megapixels, :photo_res_x, :photo_res_y, :hdr, :front_megapixels, :video_res_x, :video_res_y, :fps, :three_g, :four_g, :wifi, :bluetooth, :nfc, :gyroscope, :accelerometer, :light_sensor, :proximity, :sim, :glonass, :disp_protect, :card, :card_max, :compass, :autofocus, :diaphragm, :jack, :wireless_charge, :fast_charge, :type_c, :vr, :battery, :standby_time, :talk_time, :os, :color, :weight, :dimensions, :material, :protection)
     end
 end

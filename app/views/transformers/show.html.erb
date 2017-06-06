@@ -1,8 +1,7 @@
-<main class="main">
+<main>
   <div class="container">
     <%= link_to transformers_path do %><h2>Телефоны<% end %> > <%= @transformer.model %></h2>
     <section class="gadget-head">
-      <h1 class="gadget-caption">Трансформер <%= @transformer.model %></h1>
       <div class="img-box">
         <%= link_to (image_path 'transformers/'+@transformer.model+'_full'), 'data-fancybox' => 'gallery' do %>
           <% image_tag 'transformers/'+@transformer.model %>
@@ -11,6 +10,7 @@
         <% end %>
       </div>
       <div class="main-specs">
+        <h1 class="gadget-caption">Трансформер <%= @transformer.model %></h1>
         <table class="specs">
           <caption>Основные характеристики:</caption>
           <tr>
@@ -38,143 +38,131 @@
         <%= link_to 'Удалить', transformer_path(@transformer), method: :delete, data: { confirm: 'Вы уверены?' }, class: "button attention" %>
       </div>
     </section>
-      <table class="specs">
-        <caption>Все характеристики:</caption>
-        <tr>
-          <td class="sub-heading">Описание:</td>
-        </tr>
-        <tr>
-          <td colspan="4"><%= @transformer.description %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Экран:</td>
-        </tr>
-        <tr>
-          <td>Разрешение экрана:</td>
-          <td><%= @transformer.resolution_x %> x <%= @transformer.resolution_y %> px</td>
-          <td>Диагональ экрана (дюймы):</td>
-          <td><%= @transformer.diagonal %></td>
-        </tr>
-        <tr>
-          <td>Тип экрана:</td>
-          <td><%= @transformer.screen_type %></td>
-          <td>DPI (точек на дюйм):</td>
-          <td><%= @transformer.dpi %> ppi</td>
-        </tr>
-        <tr>
-          <td>Мультитач (одновременных касаний):</td>
-          <td><%= @transformer.multitouch %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Процессор:</td>
-        </tr>
-        <tr>
-          <td>CPU:</td>
-          <td><%= @transformer.cpu %></td>
-          <td>Количество ядер:</td>
-          <td><%= @transformer.cores %></td>
-        </tr>
-        <tr>
-          <td>Частота ядер процессора:</td>
-          <td><%= @transformer.frequency %> GHz</td>
-          <td>GPU:</td>
-          <td><%= @transformer.gpu %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Память:</td>
-        </tr>
-        <tr>
-          <td>Внутренняя память:</td>
-          <td><%= @transformer.inner_mem %> GB</td>
-          <td>Оперативная память:</td>
-          <td><%= @transformer.ram %> GB</td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Камера:</td>
-        </tr>
-        <tr>
-          <td>Модуль камеры:</td>
-          <td><%= @transformer.cam %></td>
-          <td>Количество мегапикселей:</td>
-          <td><%= @transformer.megapixels %> MP</td>
-        </tr>
-        <tr>
-          <td>Разрешение фотографий:</td>
-          <td><%= @transformer.photo_res_x %> x <%= @transformer.photo_res_y %> px</td>
-          <td>Разрешение видео:</td>
-          <td><%= @transformer.video_res_x %> x <%= @transformer.video_res_y %> px</td>
-        </tr>
-        <tr>
-          <td>FPS (Кадров в секунду):</td>
-          <td><%= @transformer.fps %></td>
-          <td>HDR:</td>
-          <td><%= @transformer.hdr %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Беспроводные интерфейсы:</td>
-        </tr>
-        <tr>
-          <td>WiFi:</td>
-          <td><%= @transformer.wifi %></td>
-          <td>Bluetooth:</td>
-          <td><%= @transformer.bluetooth %></td>
-        </tr>
-        <tr>
-          <td>NFC:</td>
-          <td><%= @transformer.nfc %></td>
-          <td>Беспроводная зарядка:</td>
-          <td><%= @transformer.wireless_charge %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Датчики:</td>
-        </tr>
-        <tr>
-          <td>Гироскоп:</td>
-          <td><%= @transformer.gyroscope %></td>
-          <td>Акселерометр:</td>
-          <td><%= @transformer.accelerometer %></td>
-        </tr>
-        <tr>
-          <td>Барометр:</td>
-          <td><%= @transformer.barometer %></td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Время работы:</td>
-        </tr>
-        <tr>
-          <td>Время работы в режиме ожидания:</td>
-          <td><%= @transformer.standby_time %> ч.</td>
-          <td>Батарея:</td>
-          <td><%= @transformer.battery %> mAh</td>
-        </tr>
-        <tr>
-          <td class="sub-heading">Прочее:</td>
-        </tr>
-        <tr>
-          <td>Стилус:</td>
-          <td><%= @transformer.stylus %></td>
-          <td>Интерфейсы:</td>
-          <td><%= @transformer.interfaces %></td>
-        </tr>
-        <tr>
-          <td>Кардридер:</td>
-          <td><%= @transformer.cards %></td>
-          <td>Цвета:</td>
-          <td><%= @transformer.color %></td>
-        </tr>
-        <tr>
-          <td>Вес:</td>
-          <td><%= @transformer.weight %> гр.</td>
-          <td>Размеры (ДxШxВ):</td>
-          <td><%= @transformer.dimensions %></td>
-        </tr>
-        <tr>
-          <td>Материал корпуса:</td>
-          <td><%= @transformer.material %></td>
-          <td>Степень защиты:</td>
-          <td><%= @transformer.protection %></td>
-        </tr>
-      </table>
-    </div>
+    <table class="specs">
+      <caption>Все характеристики:</caption>
+      <tr>
+        <td class="sub-heading">Описание:</td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= @transformer.description %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Дисплей:</td>
+      </tr>
+      <tr>
+        <td>Разрешение экрана:</td>
+        <td><%= @transformer.resolution_x %> x <%= @transformer.resolution_y %> px</td>
+        <td>Диагональ экрана (дюймы):</td>
+        <td><%= @transformer.diagonal %></td>
+      </tr>
+      <tr>
+        <td>Тип экрана:</td>
+        <td><%= @transformer.screen_type %></td>
+        <td>DPI (точек на дюйм):</td>
+        <td><%= @transformer.dpi %> ppi</td>
+      </tr>
+      <tr>
+        <td>Мультитач (одновременных касаний):</td>
+        <td><%= @transformer.multitouch %></td>
+        <td>Защитное стекло:</td>
+        <td><%= @transformer.disp_protect %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Процессор:</td>
+      </tr>
+      <tr>
+        <td>CPU:</td>
+        <td><%= @transformer.cpu %></td>
+        <td>Количество ядер:</td>
+        <td><%= @transformer.cores %></td>
+      </tr>
+      <tr>
+        <td>Частота ядер процессора:</td>
+        <td><%= @transformer.frequency %> GHz</td>
+        <td>GPU:</td>
+        <td><%= @transformer.gpu %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Память:</td>
+      </tr>
+      <tr>
+        <td>Внутренняя память:</td>
+        <td><%= @transformer.inner_mem %> GB</td>
+        <td>Оперативная память:</td>
+        <td><%= @transformer.ram %> GB</td>
+      </tr>
+      <tr>
+        <td>Поддержка карт памяти:</td>
+        <td><%= @transformer.card %></td>
+        <td>Максимальный объем карт памяти (GB):</td>
+        <td><%= @transformer.card_max %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Беспроводные интерфейсы:</td>
+      </tr>
+      <tr>
+        <td>WiFi:</td>
+        <td><%= @transformer.wifi %></td>
+        <td>Bluetooth:</td>
+        <td><%= @transformer.bluetooth %></td>
+      </tr>
+      <tr>
+        <td>GLONASS:</td>
+        <td><%= @transformer.glonass %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Датчики:</td>
+      </tr>
+      <tr>
+        <td>Гироскоп:</td>
+        <td><%= @transformer.gyroscope %></td>
+        <td>Акселерометр:</td>
+        <td><%= @transformer.accelerometer %></td>
+      </tr>
+      <tr>
+        <td>Датчик освещенности:</td>
+        <td><%= @transformer.light_sensor %></td>
+      </tr>
+      <tr>
+        <td class="sub-heading">Время работы:</td>
+      </tr>
+      <tr>
+        <td>Время работы в режиме ожидания:</td>
+        <td><%= @transformer.standby_time %> ч.</td>
+        <td>Батарея:</td>
+        <td><%= @transformer.battery %> mAh</td>
+      <tr>
+        <td class="sub-heading">Прочее:</td>
+      </tr>
+      <tr>
+        <td>Быстрая зарядка:</td>
+        <td><%= @transformer.fast_charge %></td>
+        <td>Интерфейсы:</td>
+        <td><%= @transformer.interfaces %></td>
+      </tr>
+      <tr>
+        <td>Стилус:</td>
+        <td><%= @transformer.stylus %></td>
+        <td>Цвета:</td>
+        <td><%= @transformer.color %></td>
+      </tr>
+      <tr>
+        <td>Вес:</td>
+        <td><%= @transformer.weight %> гр.</td>
+        <td>Размеры (ДxШxВ):</td>
+        <td><%= @transformer.dimensions %></td>
+      </tr>
+      <tr>
+        <td>Материал корпуса:</td>
+        <td><%= @transformer.material %></td>
+        <td>Степень защиты:</td>
+        <td><%= @transformer.protection %></td>
+      </tr>
+      <tr>
+        <td>Разъем 3.5 мм Jack:</td>
+        <td><%= @transformer.jack %></td>
+      </tr>
+    </table>
+  </div>
   <%= render 'layouts/footer' %>
 </main>

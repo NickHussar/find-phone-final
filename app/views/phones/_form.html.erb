@@ -1,213 +1,327 @@
 <main>
   <div class="container">
-    <h2>Телефон</h2>
+    <h2>Телефон <%= @phone.model %></h2>
     <%= form_for @phone do |f| %>
-    <% if @phone.errors.any? %>
-      <div id="error_explanation">
-        <h2>
-          <%= pluralize(@phone.errors.count, "error") %> prohibited
-          this phone from being saved:
-        </h2>
-        <ul>
-          <% @phone.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-          <% end %>
-        </ul>
-      </div>
-    <% end %>
-      <div class="device-form">
-        <select>
-          <% @developers.each do |developer| %>
-            <option><%= developer.name %></option>
-          <% end %>
-        </select>
-        <p>
-          <%= f.label :model %><br>
+      <% if @phone.errors.any? %>
+        <div id="error_explanation">
+          <h2>
+            <%= pluralize(@phone.errors.count, "error") %> prohibited
+            this phone from being saved:
+          </h2>
+          <ul>
+            <% @phone.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <section class="device-form">
+        <figure>
+          <p>Разработчик</p>
+          <select>
+            <% @developers.each do |developer| %>
+              <option><%= developer.name %></option>
+            <% end %>
+          </select>
+        </figure>
+        <figure>
+          <%= f.label :model, "Модель" %>
           <%= f.text_field :model %>
-        </p>
-        <p>
-          <%= f.label :description %><br>
-          <%= f.text_field :description %>
-        </p>
-        <p>
-          <%= f.label :m_year %><br>
+        </figure>
+        <figure>
+          <%= f.label :m_year, "Год выхода" %>
           <%= f.text_field :m_year %>
-        </p>
-        <p>
-          <%= f.label :resolution_x %><br>
+        </figure>
+        <figure>
+          <%= f.label :resolution_x, "Разрешение экрана (x)" %>
           <%= f.text_field :resolution_x %>
-        </p>
-        <p>
-          <%= f.label :resolution_y %><br>
+        </figure>
+        <figure>
+          <%= f.label :resolution_y, "Разрешение экрана (y)" %>
           <%= f.text_field :resolution_y %>
-        </p>
-        <p>
-          <%= f.label :diagonal %><br>
+        </figure>
+        <figure>
+          <%= f.label :diagonal, "Диагональ экрана" %>
           <%= f.text_field :diagonal %>
-        </p>
-        <p>
-          <%= f.label :screen_type %><br>
+        </figure>
+        <figure>
+          <%= f.label :screen_type, "Тип экрана" %>
           <%= f.text_field :screen_type %>
-        </p>
-        <p>
-          <%= f.label :dpi %><br>
+        </figure>
+        <figure>
+          <%= f.label :dpi, "DPI" %>
           <%= f.text_field :dpi %>
-        </p>
-        <p>
-          <%= f.label :multitouch %><br>
+        </figure>
+        <figure>
+          <%= f.label :multitouch, "Кол-во одновременных касаний" %>
           <%= f.text_field :multitouch %>
-        </p>
-        <p>
-          <%= f.label :cpu %><br>
+        </figure>
+        <figure>
+          <%= f.label :disp_protect, "Защита дисплея" %>
+          <%= f.text_field :disp_protect %>
+        </figure>
+        <figure>
+          <%= f.label :cpu, "Процессор" %>
           <%= f.text_field :cpu %>
-        </p>
-        <p>
-          <%= f.label :cores %><br>
+        </figure>
+        <figure>
+          <%= f.label :cores, "Кол-во ядер" %>
           <%= f.text_field :cores %>
-        </p>
-        <p>
-          <%= f.label :frequency %><br>
+        </figure>
+        <figure>
+          <%= f.label :frequency, "Частота процессора" %>
           <%= f.text_field :frequency %>
-        </p>
-        <p>
-          <%= f.label :gpu %><br>
+        </figure>
+        <figure>
+          <%= f.label :gpu, "Графический процессор"%>
           <%= f.text_field :gpu %>
-        </p>
-        <p>
-          <%= f.label :inner_mem %><br>
+        </figure>
+        <figure>
+          <%= f.label :inner_mem, "Объем внутр. памяти" %>
           <%= f.text_field :inner_mem %>
-        </p>
-        <p>
-          <%= f.label :ram %><br>
+        </figure>
+        <figure>
+          <%= f.label :ram, "Объем опер. памяти" %>
           <%= f.text_field :ram %>
-        </p>
-        <p>
-          <%= f.label :cam %><br>
+        </figure>
+        <figure>
+          <%= f.label :cam, "Модуль камеры" %>
           <%= f.text_field :cam %>
-        </p>
-        <p>
-          <%= f.label :megapixels %><br>
+        </figure>
+        <figure>
+          <%= f.label :diaphragm, "Диафрагма (f/)" %>
+          <%= f.text_field :diaphragm %>
+        </figure>
+        <figure>
+          <%= f.label :megapixels, "Кол-во Mp основной камеры" %>
           <%= f.text_field :megapixels %>
-        </p>
-        <p>
-          <%= f.label :photo_res_x %><br>
+        </figure>
+        <figure>
+          <%= f.label :photo_res_x, "Разрешение фото (x)" %>
           <%= f.text_field :photo_res_x %>
-        </p>
-        <p>
-          <%= f.label :photo_res_y %><br>
+        </figure>
+        <figure>
+          <%= f.label :photo_res_y, "Разрешение фото (y)" %>
           <%= f.text_field :photo_res_y %>
-        </p>
-        <p>
-          <%= f.label :hdr %><br>
-          <%= f.text_field :hdr %>
-        </p>
-        <p>
-          <%= f.label :front_megapixels %><br>
+        </figure>
+        <figure>
+          <%= f.label :front_megapixels, "Кол-во Mp фронтальной камеры" %>
           <%= f.text_field :front_megapixels %>
-        </p>
-        <p>
-          <%= f.label :video_res_x %><br>
+        </figure>
+        <figure>
+          <%= f.label :video_res_x, "Разрешение видео (x)" %>
           <%= f.text_field :video_res_x %>
-        </p>
-        <p>
-          <%= f.label :video_res_y %><br>
+        </figure>
+        <figure>
+          <%= f.label :video_res_y, "Разрешение видео (y)" %>
           <%= f.text_field :video_res_y %>
-        </p>
-        <p>
-          <%= f.label :fps %><br>
+        </figure>
+        <figure>
+          <%= f.label :fps, "FPS" %>
           <%= f.text_field :fps %>
-        </p>
-        <p>
-          <%= f.label :three_g %><br>
-          <%= f.text_field :three_g %>
-        </p>
-        <p>
-          <%= f.label :four_g %><br>
-          <%= f.text_field :four_g %>
-        </p>
-        <p>
-          <%= f.label :wifi %><br>
-          <%= f.text_field :wifi %>
-        </p>
-        <p>
-          <%= f.label :bluetooth %><br>
+        </figure>
+        <figure>
+          <%= f.label :bluetooth, "Bluetooth" %>
           <%= f.text_field :bluetooth %>
-        </p>
-        <p>
-          <%= f.label :nfc %><br>
-          <%= f.text_field :nfc %>
-        </p>
-        <p>
-          <%= f.label :gyroscope %><br>
-          <%= f.text_field :gyroscope %>
-        </p>
-        <p>
-          <%= f.label :accelerometer %><br>
-          <%= f.text_field :accelerometer %>
-        </p>
-        <p>
-          <%= f.label :barometer %><br>
-          <%= f.text_field :barometer %>
-        </p>
-        <p>
-          <%= f.label :wireless_charge %><br>
-          <%= f.text_field :wireless_charge %>
-        </p>
-        <p>
-          <%= f.label :fast_charge %><br>
-          <%= f.text_field :fast_charge %>
-        </p>
-        <p>
-          <%= f.label :type_c %><br>
-          <%= f.text_field :type_c %>
-        </p>
-        <p>
-          <%= f.label :vr %><br>
-          <%= f.text_field :vr %>
-        </p>
-        <p>
-          <%= f.label :battery %><br>
+        </figure>
+        <figure>
+          <%= f.label :battery, "Емкость батареи" %>
           <%= f.text_field :battery %>
-        </p>
-        <p>
-          <%= f.label :standby_time %><br>
+        </figure>
+        <figure>
+          <%= f.label :standby_time, "Время работы в режиме ожидания" %>
           <%= f.text_field :standby_time %>
-        </p>
-        <p>
-          <%= f.label :talk_time %><br>
+        </figure>
+        <figure>
+          <%= f.label :talk_time, "Время работы в режиме разговора" %>
           <%= f.text_field :talk_time %>
-        </p>
-        <p>
-          <%= f.label :os %><br>
+        </figure>
+        <figure>
+          <%= f.label :os, "Операционная система" %>
           <%= f.text_field :os %>
-        </p>
-        <p>
-          <%= f.label :color %><br>
+        </figure>
+        <figure>
+          <%= f.label :color, "Цвета" %>
           <%= f.text_field :color %>
-        </p>
-        <p>
-          <%= f.label :weight %><br>
+        </figure>
+        <figure>
+          <%= f.label :weight, "Вес" %>
           <%= f.text_field :weight %>
-        </p>
-        <p>
-          <%= f.label :dimensions %><br>
+        </figure>
+        <figure>
+          <%= f.label :dimensions, "Размеры (ДxШxВ)" %>
           <%= f.text_field :dimensions %>
-        </p>
-        <p>
-          <%= f.label :material %><br>
+        </figure>
+        <figure>
+          <%= f.label :material, "Материал корпуса" %>
           <%= f.text_field :material %>
-        </p>
-        <p>
-          <%= f.label :protection %><br>
+        </figure>
+        <figure>
+          <%= f.label :protection, "Степень защиты" %>
           <%= f.text_field :protection %>
-        </p>
-        <p>
-          <%= f.submit(class: "button", value: "Обновить") %>
-        </p>
-        <p>
-          <%= link_to "Назад", phones_path(:id), class: "button" %>
-        </p>
-      </div>
+        </figure>
+        <figure>
+          <%= f.label :card_max, "Максимальный объем карт памяти" %>
+          <%= f.text_field :card_max %>
+        </figure>
+        <figure>
+          <%= f.label :sim, "Формат SIM" %>
+          <%= f.text_field :sim %>
+        </figure>
+        <figure>
+          <%= f.label :card, "Поддержка карт памяти" %>
+          <div>
+            <%= radio_button_tag(:card, "true") %>
+            <%= label_tag(:card, "Есть") %>
+            <%= radio_button_tag(:card, "false") %>
+            <%= label_tag(:card, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :hdr, "HDR" %>
+          <div>
+            <%= radio_button_tag(:hdr, "true") %>
+            <%= label_tag(:hdr, "Есть") %>
+            <%= radio_button_tag(:hdr, "false") %>
+            <%= label_tag(:hdr, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :nfc, "NFC" %>
+          <div>
+            <%= radio_button_tag(:nfc, "true") %>
+            <%= label_tag(:nfc, "Есть") %>
+            <%= radio_button_tag(:nfc, "false") %>
+            <%= label_tag(:nfc, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :gyroscope, "Гироскоп" %>
+          <div>
+            <%= radio_button_tag(:gyroscope, "true") %>
+            <%= label_tag(:gyroscope, "Есть") %>
+            <%= radio_button_tag(:gyroscope, "false") %>
+            <%= label_tag(:gyroscope, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :accelerometer, "Акселерометр" %>
+          <div>
+            <%= radio_button_tag(:accelerometer, "true") %>
+            <%= label_tag(:accelerometer, "Есть") %>
+            <%= radio_button_tag(:accelerometer, "false") %>
+            <%= label_tag(:accelerometer, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :light_sensor, "Датчик освещенности" %>
+          <div>
+            <%= radio_button_tag(:light_sensor, "true") %>
+            <%= label_tag(:light_sensor, "Есть") %>
+            <%= radio_button_tag(:light_sensor, "false") %>
+            <%= label_tag(:light_sensor, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :compass, "Цифровой компас" %>
+          <div>
+            <%= radio_button_tag(:compass, "true") %>
+            <%= label_tag(:compass, "Есть") %>
+            <%= radio_button_tag(:compass, "false") %>
+            <%= label_tag(:compass, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :proximity, "Датчик приближения" %>
+          <div>
+            <%= radio_button_tag(:proximity, "true") %>
+            <%= label_tag(:proximity, "Есть") %>
+            <%= radio_button_tag(:proximity, "false") %>
+            <%= label_tag(:proximity, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :wireless_charge, "Беспроводная зарядка" %>
+          <div>
+            <%= radio_button_tag(:wireless_charge, "true") %>
+            <%= label_tag(:wireless_charge, "Есть") %>
+            <%= radio_button_tag(:wireless_charge, "false") %>
+            <%= label_tag(:wireless_charge, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :fast_charge, "Быстрая зарядка" %>
+          <div>
+            <%= radio_button_tag(:fast_charge, "true") %>
+            <%= label_tag(:fast_charge, "Есть") %>
+            <%= radio_button_tag(:fast_charge, "false") %>
+            <%= label_tag(:fast_charge, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :type_c, "USB Type-C" %>
+          <div>
+            <%= radio_button_tag(:type_c, "true") %>
+            <%= label_tag(:type_c, "Есть") %>
+            <%= radio_button_tag(:type_c, "false") %>
+            <%= label_tag(:type_c, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :vr, "Виртуальная реальность" %>
+          <div>
+            <%= radio_button_tag(:vr, "true") %>
+            <%= label_tag(:vr, "Есть") %>
+            <%= radio_button_tag(:vr, "false") %>
+            <%= label_tag(:vr, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :jack, "Разъем 3.5 мм" %>
+          <div>
+            <%= radio_button_tag(:jack, "true") %>
+            <%= label_tag(:jack, "Есть") %>
+            <%= radio_button_tag(:jack, "false") %>
+            <%= label_tag(:jack, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :autofocus, "Автофокус" %>
+          <div>
+            <%= radio_button_tag(:autofocus, "true") %>
+            <%= label_tag(:autofocus, "Есть") %>
+            <%= radio_button_tag(:autofocus, "false") %>
+            <%= label_tag(:autofocus, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :glonass, "ГЛОНАСС" %>
+          <div>
+            <%= radio_button_tag(:glonass, "true") %>
+            <%= label_tag(:glonass, "Есть") %>
+            <%= radio_button_tag(:glonass, "false") %>
+            <%= label_tag(:glonass, "Нет") %>
+          </div>
+        </figure>
+        <figure>
+          <%= f.label :description, "Описание" %>
+          <%= f.text_area :description %>
+        </figure>
+        <figure>
+          <%= f.label :three_g, "3G" %>
+          <%= f.text_area :three_g %>
+        </figure>
+        <figure>
+          <%= f.label :four_g, "4G" %>
+          <%= f.text_area :four_g %>
+        </figure>
+        <figure>
+          <%= f.label :wifi, "WiFi" %>
+          <%= f.text_area :wifi %>
+        </figure>
+      </section>
+      <%= f.submit(class: "button", value: "Сохранить") %>
+      <%= link_to "Назад", phones_path(:id), class: "button" %>
     <% end %>
   </div>
 </main>

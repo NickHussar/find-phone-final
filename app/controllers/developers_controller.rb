@@ -16,10 +16,18 @@ class DevelopersController < ApplicationController
 
   def new
     @developer = Developer.new
+    @phones = Phone.all
+    @tablets = Tablet.all
+    @transformers = Transformer.all
+    @watches = Watch.all
   end
 
   def edit
     @developer = Developer.find(params[:id])
+    @phones = Phone.all
+    @tablets = Tablet.all
+    @transformers = Transformer.all
+    @watches = Watch.all
   end
 
   def create
@@ -51,6 +59,6 @@ class DevelopersController < ApplicationController
 
   private
     def developer_params
-      params.require(:developer).permit(:name, :description, :devices)
+      params.require(:developer).permit(:name, :description, :devices, :founded, :founders)
     end
 end
