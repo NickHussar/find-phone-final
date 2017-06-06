@@ -37,15 +37,8 @@ class ColumnsEdit < ActiveRecord::Migration[5.0]
     add_column :tablets, :diaphragm, :decimal, precision: 3, scale: 1
     add_column :tablets, :jack, :boolean
     remove_column :transformers, :barometer, :boolean
-    remove_column :transformers, :cam, :integer
-    remove_column :transformers, :megapixels, :decimal
-    remove_column :transformers, :photo_res_x, :integer
-    remove_column :transformers, :photo_res_y, :integer
-    remove_column :transformers, :hdr, :boolean
-    remove_column :transformers, :video_res_x, :integer
-    remove_column :transformers, :video_res_y, :integer
-    remove_column :transformers, :fps, :boolean
     remove_column :transformers, :nfc, :boolean
+    remove_column :transformers, :cards, :string
     add_column :transformers, :glonass, :boolean
     add_column :transformers, :disp_protect, :string
     add_column :transformers, :card, :boolean

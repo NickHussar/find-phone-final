@@ -52,6 +52,6 @@ class WatchesController < ApplicationController
 
   private
     def watch_params
-      params.require(:watch).permit(:model, :description, :m_year, :resolution_x, :resolution_y, :diagonal, :screen_type, :dpi, :multitouch, :cpu, :cores, :frequency, :gpu, :inner_mem, :ram, :cam, :megapixels, :photo_res_x, :photo_res_y, :hdr, :front_megapixels, :video_res_x, :video_res_y, :fps, :three_g, :four_g, :wifi, :bluetooth, :nfc, :gyroscope, :accelerometer, :light_sensor, :proximity, :sim, :glonass, :disp_protect, :card, :card_max, :compass, :autofocus, :diaphragm, :jack, :wireless_charge, :fast_charge, :type_c, :vr, :battery, :standby_time, :talk_time, :os, :color, :weight, :dimensions, :material, :protection)
+      params.require(:watch).permit(:model, :description, :resolution_x, :resolution_y, :diagonal, :screen_type, :color_screen, :dpi, :touchscreen, :multitouch, :cpu, :cores, :frequency, :gpu, :inner_mem, :ram, :finder, :phone, :e_mail, :wifi, :bluetooth, :nfc, :gps, :gyroscope, :accelerometer, :barometer, :thermometer, :compass, :chronograph, :pedometer, :pulse_sensor, :fitness_tracker, :wireless_charge, :fast_charge, :type_c, :battery, :standby_time, :clock_time, :os, :online_service, :compatibility, :speaker, :mic,  :color, :weight, :dimensions, :material, :protection, :m_year, :disp_protect, :glonass, :light_sensor)
     end
 end
